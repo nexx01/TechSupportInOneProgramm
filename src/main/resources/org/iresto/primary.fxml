@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.textfield.CustomTextField?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
       minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1">
     <children>
@@ -11,6 +11,13 @@
             <VBox.margin>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
             </VBox.margin>
+            <children>
+                <CustomTextField layoutX="14.0" layoutY="11.0" prefHeight="25.0" prefWidth="453.0"
+                                 AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="123.0"
+                                 AnchorPane.topAnchor="11.0"/>
+                <Button layoutX="474.0" layoutY="11.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0"
+                        text="Button" AnchorPane.rightAnchor="11.0"/>
+            </children>
         </AnchorPane>
         <AnchorPane prefHeight="329.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
             <VBox.margin>
@@ -21,14 +28,17 @@
                            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
                         <TableColumn prefWidth="119.0" text="Брэнд"/>
-                        <TableColumn prefWidth="209.0" text="Юр.лицо"/>
-                        <TableColumn prefWidth="139.0" text="Адрес"/>
-                        <TableColumn prefWidth="69.0" text="Лицензия "/>
-                        <TableColumn prefWidth="45.0" text="Статус"/>
+                        <TableColumn prefWidth="184.0" text="Юр.лицо"/>
+                        <TableColumn prefWidth="130.0" text="Адрес"/>
+                        <TableColumn prefWidth="84.0" text="Лицензия "/>
+                        <TableColumn prefWidth="64.0" text="Статус ТП"/>
                     </columns>
                     <padding>
                         <Insets bottom="4.0" left="4.0" right="4.0" top="4.0"/>
                     </padding>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                    </columnResizePolicy>
                 </TableView>
             </children>
         </AnchorPane>
