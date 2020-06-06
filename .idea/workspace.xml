@@ -18,31 +18,22 @@
   <component name="ChangeListManager">
     <list default="true" id="4f990358-d0f9-4b4e-a265-007cabb77481" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/iresto/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/iresto/PrimaryController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/iresto/SecondaryController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/iresto/impl/CollectionConnectionBook.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/iresto/impl/GetConnect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/iresto/impl/interfaces/Connect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/iresto/impl/interfaces/ConnectionBook.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/iresto/object/AbstractClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/iresto/object/AbstractWorkComputer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/iresto/object/impl/WorkComputer/WorkComputer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/iresto/object/impl/client/ClientMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/iresto/object/impl/client/ClientUit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/iresto/primary.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/iresto/secondary.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/bundle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/bundle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/bundle_ru_Ru.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/bundle_ru_Ru.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/primary.fxml" afterDir="false" />
     </list>
     <list id="bdf2d506-c732-44a6-8877-e09d94ec66d1" name="Revert &quot;test6 commit&quot;" comment="Revert &quot;test6 commit&quot;&#10;&#10;This reverts commit 0c44a83d" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="properties" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -60,10 +51,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Program Files/Java/jdk-14.0.1/lib" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.63908046" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -121,29 +112,33 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1591448817953" />
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591468037253">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1591468037253" />
     <state x="389" y="110" key="FileChooserDialogImpl" timestamp="1591448876371">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="389" y="110" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1591448876371" />
-    <state width="1323" height="290" key="GridCell.Tab.0.bottom" timestamp="1591451018360">
+    <state width="1323" height="152" key="GridCell.Tab.0.bottom" timestamp="1591468145286">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="290" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1591451018360" />
-    <state width="1323" height="290" key="GridCell.Tab.0.center" timestamp="1591451018360">
+    <state width="1323" height="152" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1591468145286" />
+    <state width="1323" height="152" key="GridCell.Tab.0.center" timestamp="1591468145285">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="290" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1591451018360" />
-    <state width="1323" height="290" key="GridCell.Tab.0.left" timestamp="1591451018359">
+    <state width="1323" height="152" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1591468145285" />
+    <state width="1323" height="152" key="GridCell.Tab.0.left" timestamp="1591468145284">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="290" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1591451018359" />
-    <state width="1323" height="290" key="GridCell.Tab.0.right" timestamp="1591451018360">
+    <state width="1323" height="152" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1591468145284" />
+    <state width="1323" height="152" key="GridCell.Tab.0.right" timestamp="1591468145285">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="290" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1591451018360" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1591448885081">
+    <state width="1323" height="152" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1591468145285" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1591467959242">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1591448885081" />
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1591467959242" />
   </component>
 </project>
