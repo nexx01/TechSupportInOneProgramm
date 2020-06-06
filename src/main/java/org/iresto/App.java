@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 /**
  * JavaFX App
@@ -28,6 +29,7 @@ public class App extends Application {
 
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        fxmlLoader.setResources(ResourceBundle.getBundle("org.iresto.bundle"));
         return fxmlLoader.load();
     }
 

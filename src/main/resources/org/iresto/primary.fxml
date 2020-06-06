@@ -27,7 +27,7 @@
                 <TableView prefHeight="328.0" prefWidth="590.0" AnchorPane.bottomAnchor="6.0"
                            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                        <TableColumn prefWidth="119.0" text="Брэнд"/>
+                        <TableColumn prefWidth="119.0" text="%columnBrand"/>
                         <TableColumn prefWidth="184.0" text="Юр.лицо"/>
                         <TableColumn prefWidth="130.0" text="Адрес"/>
                         <TableColumn prefWidth="84.0" text="Лицензия "/>
