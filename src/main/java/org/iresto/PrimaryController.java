@@ -6,6 +6,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.beans.property.ObjectProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -40,7 +43,8 @@ public class PrimaryController implements Initializable {
     Хотя эта таблица заполняется именно этим типом
     * */
    // private CollectionClienBook clienBookImpl = new CollectionClienBook();
-    private Client_DAO clientBookImpl= new Client_DAO();
+    private Client_DAO client_dao= new Client_DAO();// создаем экземпляр для подключения к БД
+    private ObservableList<ClientIiko> clientBookImpl= FXCollections.observableArrayList();
 
     private ResourceBundle resourceBundle;
 
@@ -59,7 +63,9 @@ public class PrimaryController implements Initializable {
 
     /* метод для заполнения таблицы тест. данными*/
     private void fillData(){
-        tableClientBook.setItems(clientBookImpl.findAllClient());
+
+        clientBookImpl=client_dao.findAllClient();// выкачиваем данные и раззрываем
+        tableClientBook.setItems(clientBookImpl);//заполняем таблицу интерфейса
     }
 
 
@@ -71,6 +77,21 @@ public class PrimaryController implements Initializable {
             m.invoke(null, customTextField, customTextField.rightProperty());
         }catch (Exception e){
             e.printStackTrace();
+        }
+    }
+
+    public  void actionSearch(ActionEvent actionEvent){
+        clientBookImpl.clear();
+/* Здесь два варианта или выполнять поиск выкачивая данные из БД
+* т.е for (ClientIiko clientIiko:client_dao.findAllClient())
+* или сделать Backuplist и выполнять поиск в нем в В памяти*/
+        String  str= txtSearch.getText().toLowerCase();
+        for (ClientIiko clientIiko:client_dao.findAllClient()){
+            if (clientIiko.getBrand().toLowerCase().contains(str)||
+                        clientIiko.getLegalEntity().toLowerCase().contains(str)||
+            clientIiko.getAddress().toLowerCase().contains(str)){
+                clientBookImpl.add(clientIiko);
+            }
         }
     }
 
