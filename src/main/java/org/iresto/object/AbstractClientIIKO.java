@@ -8,6 +8,21 @@ public class AbstractClientIIKO extends AbstractClient {
         super(brand, legalEntity, statusOfSupport);
     }
 
+    @Override
+    public String getBrand() {
+        return super.getBrand();
+    }
+
+    @Override
+    public String getLegalEntity() {
+        return super.getLegalEntity();
+    }
+
+    @Override
+    public String getAddress() {
+        return super.getAddress();
+    }
+
     public String getKindOfLicense() {
         return kindOfLicense;
     }
@@ -22,5 +37,13 @@ public class AbstractClientIIKO extends AbstractClient {
 
     public void setStatusOfSupport(String statusOfSupport) {
         this.statusOfSupport = statusOfSupport;
+    }
+
+    @Override
+    public String toString() {
+        return "AbstractClientIIKO{" +
+                       "kindOfLicense='" + kindOfLicense + '\'' +
+                       ", statusOfSupport='" + statusOfSupport + '\'' +
+                       '}';
     }
 }

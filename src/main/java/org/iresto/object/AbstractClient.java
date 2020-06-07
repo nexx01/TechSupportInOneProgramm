@@ -1,18 +1,26 @@
 package org.iresto.object;
 
 public abstract class AbstractClient {
-    private final String Brand;
-    private final String legalEntity;
-    private final String address;
+    private  String Brand;
+    private  String legalEntity;
+    private  String address;
 
 
-    public AbstractClient(String brand, String legalEntity, String statusOfSupport) {
+    public AbstractClient(String brand, String legalEntity, String address) {
         Brand = brand;
         this.legalEntity = legalEntity;
-        this.address = statusOfSupport;
+        this.address = address;
     }
 
+    public String getBrand() {
+        return Brand;
+    }
 
+    public String getLegalEntity() {
+        return legalEntity;
+    }
 
-
+    public String getAddress() {
+        return address;
+    }
 }
