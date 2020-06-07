@@ -10,21 +10,22 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iresto.PrimaryController">
     <children>
-        <AnchorPane prefHeight="46.0" prefWidth="600.0">
+        <AnchorPane prefHeight="65.0" prefWidth="590.0">
             <VBox.margin>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </VBox.margin>
             <children>
                 <CustomTextField layoutX="14.0" layoutY="11.0" prefHeight="25.0" prefWidth="453.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="11.0" />
                 <Button layoutX="474.0" layoutY="11.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Button" AnchorPane.rightAnchor="11.0" />
+            <Button fx:id="btnConnectedData" layoutX="29.0" layoutY="39.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="%buttonConnectedData" />
             </children>
         </AnchorPane>
-        <AnchorPane prefHeight="329.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+        <AnchorPane prefHeight="303.0" prefWidth="590.0" VBox.vgrow="ALWAYS">
             <VBox.margin>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </VBox.margin>
             <children>
-                <TableView fx:id="tableClientBook" prefHeight="328.0" prefWidth="590.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <TableView fx:id="tableClientBook" layoutY="-12.0" prefHeight="321.0" prefWidth="590.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-12.0">
                     <columns>
                         <TableColumn fx:id="clnBrand" prefWidth="119.0" text="%columnBrand" />
                         <TableColumn fx:id="clnLegalName" prefWidth="184.0" text="%columnLegalyName" />
