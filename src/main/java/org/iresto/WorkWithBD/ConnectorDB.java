@@ -7,12 +7,12 @@ import java.util.ResourceBundle;
 
 public class ConnectorDB {
     public static Connection getConnecton() throws SQLException{
-        ResourceBundle resourceBundle= ResourceBundle.getBundle("database");
-        String url = resourceBundle.getString("db.url");
-        String user = resourceBundle.getString("db.user");
-        String pass= resourceBundle.getString("db.password");
-        String dbName = resourceBundle.getString("db.name");
-        String propertiesConnectionDB= resourceBundle.getString("db.connectionProperty");
+        ResourceBundle connectBundle= ResourceBundle.getBundle("org.iresto.database");
+        String url = connectBundle.getString("db.url");
+        String user = connectBundle.getString("db.user");
+        String pass= connectBundle.getString("db.password");
+        String dbName = connectBundle.getString("db.name");
+        String propertiesConnectionDB= connectBundle.getString("db.connectionProperty");
 
         return DriverManager.getConnection(url+dbName+propertiesConnectionDB, user,pass);
     }
