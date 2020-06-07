@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.iresto.WorkWithBD.DAO.Client_DAO;
 import org.iresto.impl.CollectionClienBook;
 import org.iresto.impl.CollectionConnectionBook;
 import org.iresto.object.AbstractClient;
@@ -29,7 +30,8 @@ public class PrimaryController implements Initializable {
     как то более универсально.
     Хотя эта таблица заполняется именно этим типом
     * */
-    private CollectionClienBook clienBookImpl = new CollectionClienBook();
+   // private CollectionClienBook clienBookImpl = new CollectionClienBook();
+    private Client_DAO clientBookImpl= new Client_DAO();
 
     private ResourceBundle resourceBundle;
 
@@ -48,9 +50,12 @@ public class PrimaryController implements Initializable {
     /*Тестовый метод для заполнения таблицы тест. данными*/
     private void fillData(){
         /*DВызываем созданный объект типа CollectionClienBook и его метод с т.данными*/
-        clienBookImpl.fillTestDataClientIiko();
+      //  clienBookImpl.fillTestDataClientIiko();
+        //tableClientBook.setItems(clienBookImpl.getClientIikoObservableList());
 
-        tableClientBook.setItems(clienBookImpl.getClientIikoObservableList());
+
+
+        tableClientBook.setItems(clientBookImpl.findAllClient());
     }
 
 

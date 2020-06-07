@@ -1,0 +1,10 @@
+//Запрос создания таблицы ClientIiko
+USE BDSupport;
+CREATE TABLE  ClientIiko(
+id INT(5) NOT NULL AUTO_INCREMENT,
+brand VARCHAR(50),
+legalyName VARCHAR(50),
+address VARCHAR(50),
+kindOfLicense VARCHAR(50),
+statusOfSupport VARCHAR(50),
+PRIMARY KEY(id));

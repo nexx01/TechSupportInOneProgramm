@@ -22,6 +22,7 @@ public class Client_DAO {
                 String address = resultSet.getString(4);
                 String kindOfLicense = resultSet.getString(5);
                 String statusOfSupport = resultSet.getString(6);
+                clientsList.add(new ClientIiko(brand,legalEntity,address,kindOfLicense,statusOfSupport));
             }
             return clientsList;
         } catch (SQLException throwables) {

@@ -9,6 +9,10 @@ public class ClientIiko extends AbstractClientIIKO {
         super(brand, legalEntity, statusOfSupport);
     }
 
+    public ClientIiko(String brand, String legalEntity, String address, String kindOfLicense, String statusOfSupport) {
+        super(brand, legalEntity, address, kindOfLicense, statusOfSupport);
+    }
+
     @Override
     public String toString() {
         return "ClientIiko{" +

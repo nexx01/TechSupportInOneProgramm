@@ -8,6 +8,12 @@ public class AbstractClientIIKO extends AbstractClient {
         super(brand, legalEntity, statusOfSupport);
     }
 
+    public AbstractClientIIKO(String brand, String legalEntity, String address, String kindOfLicense, String statusOfSupport) {
+        super(brand, legalEntity, address);
+        this.kindOfLicense = kindOfLicense;
+        this.statusOfSupport = statusOfSupport;
+    }
+
     @Override
     public String getBrand() {
         return super.getBrand();
