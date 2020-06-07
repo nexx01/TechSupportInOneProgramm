@@ -1,14 +1,20 @@
 package org.iresto;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.beans.property.ObjectProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.controlsfx.control.textfield.CustomTextField;
+import org.controlsfx.control.textfield.TextFields;
 import org.iresto.WorkWithBD.DAO.Client_DAO;
 import org.iresto.impl.CollectionClienBook;
 import org.iresto.impl.CollectionConnectionBook;
@@ -24,6 +30,9 @@ public class PrimaryController implements Initializable {
     public TableColumn clnAddress;
     public TableColumn clnLicense;
     public TableColumn clnStatusOfSupport;
+    public CustomTextField txtSearch;
+    public Button btnSearch;
+    public Button btnConnectedData;
 
     //Создаем объект Типа CollectionClienBook с названием clienBookImpl
     /*т.е планируется использовать не только для это типа нужно будет сделать
@@ -43,20 +52,28 @@ public class PrimaryController implements Initializable {
         clnAddress.setCellValueFactory(new PropertyValueFactory<ClientIiko,String>("address"));
         clnLicense.setCellValueFactory(new PropertyValueFactory<ClientIiko,String>("kindOfLicense"));
         clnStatusOfSupport.setCellValueFactory(new PropertyValueFactory<ClientIiko,String>("statusOfSupport"));
+        setupClearButtonField(txtSearch);
         fillData();
 
     }
 
-    /*Тестовый метод для заполнения таблицы тест. данными*/
+    /* метод для заполнения таблицы тест. данными*/
     private void fillData(){
-        /*DВызываем созданный объект типа CollectionClienBook и его метод с т.данными*/
-      //  clienBookImpl.fillTestDataClientIiko();
-        //tableClientBook.setItems(clienBookImpl.getClientIikoObservableList());
-
-
-
         tableClientBook.setItems(clientBookImpl.findAllClient());
     }
+
+
+    /*Создает крестик очистке в строке ввода поиска*/
+    private void setupClearButtonField(CustomTextField customTextField) {
+        try {
+            Method m = TextFields.class.getDeclaredMethod("setupClearButtonField", TextField.class, ObjectProperty.class);
+            m.setAccessible(true);
+            m.invoke(null, customTextField, customTextField.rightProperty());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
 
 
 }
