@@ -10,7 +10,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -48,6 +50,10 @@ public class PrimaryController implements Initializable {
 
     private ResourceBundle resourceBundle;
 
+    private FXMLLoader fxmlLoader=new FXMLLoader();
+    private Parent fxmlSupport;
+    private SecondaryController secondaryController;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.resourceBundle = resourceBundle;
@@ -57,11 +63,12 @@ public class PrimaryController implements Initializable {
         clnLicense.setCellValueFactory(new PropertyValueFactory<ClientIiko,String>("kindOfLicense"));
         clnStatusOfSupport.setCellValueFactory(new PropertyValueFactory<ClientIiko,String>("statusOfSupport"));
         setupClearButtonField(txtSearch);
+        initLoaderWindowSupport();
         fillData();
 
     }
 
-    /* метод для заполнения таблицы тест. данными*/
+    /* метод для заполнения таблицы данными из БД*/
     private void fillData(){
 
         clientBookImpl=client_dao.findAllClient();// выкачиваем данные и раззрываем
@@ -80,6 +87,7 @@ public class PrimaryController implements Initializable {
         }
     }
 
+    /*Метод поиска по таблице*/
     public  void actionSearch(ActionEvent actionEvent){
         clientBookImpl.clear();
 /* Здесь два варианта или выполнять поиск выкачивая данные из БД
@@ -95,6 +103,16 @@ public class PrimaryController implements Initializable {
         }
     }
 
+    private void initLoaderWindowSupport(){
+        try{
+            fxmlLoader.setLocation(getClass().getResource("secondary.fxml"));
+            fxmlLoader.setResources(ResourceBundle.getBundle("org.iresto.bundle"));
+            fxmlSupport=fxmlLoader.load();
+            secondaryController=fxmlLoader.getController();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }
