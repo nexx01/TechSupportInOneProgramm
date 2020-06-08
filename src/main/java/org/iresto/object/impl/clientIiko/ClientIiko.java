@@ -5,12 +5,13 @@ import org.iresto.object.AbstractClientIIKO;
 
 public class ClientIiko extends AbstractClientIIKO {
 
-    public ClientIiko(String brand, String legalEntity, String statusOfSupport) {
-        super(brand, legalEntity, statusOfSupport);
+
+    public ClientIiko(int clientId, String brand, String legalEntity, String address) {
+        super(clientId, brand, legalEntity, address);
     }
 
-    public ClientIiko(String brand, String legalEntity, String address, String kindOfLicense, String statusOfSupport) {
-        super(brand, legalEntity, address, kindOfLicense, statusOfSupport);
+    public ClientIiko(int clientId, String brand, String legalEntity, String address, String kindOfLicense, String statusOfSupport) {
+        super(clientId, brand, legalEntity, address, kindOfLicense, statusOfSupport);
     }
 
     @Override

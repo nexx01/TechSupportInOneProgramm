@@ -4,12 +4,12 @@ public class AbstractClientIIKO extends AbstractClient {
     public String kindOfLicense;
     public String statusOfSupport;
 
-    public AbstractClientIIKO(String brand, String legalEntity, String statusOfSupport) {
-        super(brand, legalEntity, statusOfSupport);
+    public AbstractClientIIKO(int clientId, String brand, String legalEntity, String address) {
+        super(clientId, brand, legalEntity, address);
     }
 
-    public AbstractClientIIKO(String brand, String legalEntity, String address, String kindOfLicense, String statusOfSupport) {
-        super(brand, legalEntity, address);
+    public AbstractClientIIKO(int clientId, String brand, String legalEntity, String address, String kindOfLicense, String statusOfSupport) {
+        super(clientId, brand, legalEntity, address);
         this.kindOfLicense = kindOfLicense;
         this.statusOfSupport = statusOfSupport;
     }
