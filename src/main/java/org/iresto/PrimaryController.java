@@ -47,13 +47,13 @@ public class PrimaryController implements Initializable {
     как то более универсально.
     Хотя эта таблица заполняется именно этим типом
     * */
-   // private CollectionClienBook clienBookImpl = new CollectionClienBook();
-    private Client_DAO client_dao= new Client_DAO();// создаем экземпляр для подключения к БД
-    private ObservableList<ClientIiko> clientBookImpl= FXCollections.observableArrayList();
+    // private CollectionClienBook clienBookImpl = new CollectionClienBook();
+    private Client_DAO client_dao = new Client_DAO();// создаем экземпляр для подключения к БД
+    private ObservableList<ClientIiko> clientBookImpl = FXCollections.observableArrayList();
 
     private ResourceBundle resourceBundle;
 
-    private FXMLLoader fxmlLoader=new FXMLLoader();
+    private FXMLLoader fxmlLoader = new FXMLLoader();
     private Parent fxmlSupport;
     private SecondaryController secondaryController;
 
@@ -64,10 +64,10 @@ public class PrimaryController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.resourceBundle = resourceBundle;
         clnBrand.setCellValueFactory(new PropertyValueFactory<ClientIiko, String>("brand"));
-        clnLegalName.setCellValueFactory(new PropertyValueFactory<ClientIiko,String>("legalEntity"));
-        clnAddress.setCellValueFactory(new PropertyValueFactory<ClientIiko,String>("address"));
-        clnLicense.setCellValueFactory(new PropertyValueFactory<ClientIiko,String>("kindOfLicense"));
-        clnStatusOfSupport.setCellValueFactory(new PropertyValueFactory<ClientIiko,String>("statusOfSupport"));
+        clnLegalName.setCellValueFactory(new PropertyValueFactory<ClientIiko, String>("legalEntity"));
+        clnAddress.setCellValueFactory(new PropertyValueFactory<ClientIiko, String>("address"));
+        clnLicense.setCellValueFactory(new PropertyValueFactory<ClientIiko, String>("kindOfLicense"));
+        clnStatusOfSupport.setCellValueFactory(new PropertyValueFactory<ClientIiko, String>("statusOfSupport"));
         setupClearButtonField(txtSearch);
         fillData();
         initLoaderWindowSupport();
@@ -75,9 +75,9 @@ public class PrimaryController implements Initializable {
     }
 
     /* метод для заполнения таблицы данными из БД*/
-    private void fillData(){
+    private void fillData() {
 
-        clientBookImpl=client_dao.findAllClient();// выкачиваем данные и раззрываем
+        clientBookImpl = client_dao.findAllClient();// выкачиваем данные и раззрываем
         tableClientBook.setItems(clientBookImpl);//заполняем таблицу интерфейса
     }
 
@@ -88,22 +88,22 @@ public class PrimaryController implements Initializable {
             Method m = TextFields.class.getDeclaredMethod("setupClearButtonField", TextField.class, ObjectProperty.class);
             m.setAccessible(true);
             m.invoke(null, customTextField, customTextField.rightProperty());
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     /*Метод поиска по таблице*/
-    public  void actionSearch(ActionEvent actionEvent){
+    public void actionSearch(ActionEvent actionEvent) {
         clientBookImpl.clear();
-/* Здесь два варианта или выполнять поиск выкачивая данные из БД
-* т.е for (ClientIiko clientIiko:client_dao.findAllClient())
-* или сделать Backuplist и выполнять поиск в нем в В памяти*/
-        String  str= txtSearch.getText().toLowerCase();
-        for (ClientIiko clientIiko:client_dao.findAllClient()){
-            if (clientIiko.getBrand().toLowerCase().contains(str)||
-                        clientIiko.getLegalEntity().toLowerCase().contains(str)||
-            clientIiko.getAddress().toLowerCase().contains(str)){
+        /* Здесь два варианта или выполнять поиск выкачивая данные из БД
+         * т.е for (ClientIiko clientIiko:client_dao.findAllClient())
+         * или сделать Backuplist и выполнять поиск в нем в В памяти*/
+        String str = txtSearch.getText().toLowerCase();
+        for (ClientIiko clientIiko : client_dao.findAllClient()) {
+            if (clientIiko.getBrand().toLowerCase().contains(str) ||
+                        clientIiko.getLegalEntity().toLowerCase().contains(str) ||
+                        clientIiko.getAddress().toLowerCase().contains(str)) {
                 clientBookImpl.add(clientIiko);
             }
         }
@@ -111,63 +111,62 @@ public class PrimaryController implements Initializable {
 
 
     /*Инициализация второго fxml для данных о подключении*/
-    private void initLoaderWindowSupport(){
-        try{
+    private void initLoaderWindowSupport() {
+        try {
             fxmlLoader.setLocation(getClass().getResource("secondary.fxml"));
             fxmlLoader.setResources(ResourceBundle.getBundle("org.iresto.bundle"));
-            fxmlSupport=fxmlLoader.load();
-            secondaryController=fxmlLoader.getController();
+            fxmlSupport = fxmlLoader.load();
+            secondaryController = fxmlLoader.getController();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
 
-
     /*По нажатию кнопки Подключения вызывается инициализация хагрузки secondary.fxml  и открывается
-    * окно с подключениям*/
-    public void showWindowConnectData(){
-        if(windowOfConnectData==null){
-            windowOfConnectData=new Stage();
+     * окно с подключениям*/
+    public void showWindowConnectData() {
+        if (windowOfConnectData == null) {
+            windowOfConnectData = new Stage();
             windowOfConnectData.setScene(new Scene(fxmlSupport));
             windowOfConnectData.setTitle(resourceBundle.getString("windowOfConnecnionData"));
             windowOfConnectData.setMinHeight(200);
             windowOfConnectData.setMinWidth(300);
             windowOfConnectData.initModality(Modality.WINDOW_MODAL);
-           // windowOfConnectData.initOwner();
+            // windowOfConnectData.initOwner();
 
         }
-windowOfConnectData.show();
+        windowOfConnectData.show();
     }
 
 
-    public void  actionButtonPressed(ActionEvent actionEvent){
-        Object source =actionEvent.getSource();
+    public void actionButtonPressed(ActionEvent actionEvent) {
+        Object source = actionEvent.getSource();
 
-        if (!(source instanceof Button)){
+        if (!(source instanceof Button)) {
             return;
         }
 
-        ClientIiko selectedClientIiko=(ClientIiko) tableClientBook.getSelectionModel().getSelectedItem();
+        ClientIiko selectedClientIiko = (ClientIiko) tableClientBook.getSelectionModel().getSelectedItem();
 
-        Button clickedButton=(Button) source;
+        Button clickedButton = (Button) source;
 
-        switch (clickedButton.getId()){
+        switch (clickedButton.getId()) {
             case "btnConnectedData":
-
+                secondaryController.setClientIiko((ClientIiko) tableClientBook.getSelectionModel().getSelectedItem());
                 showWindowConnectData();
                 break;
 
         }
-
     }
 
 
+private boolean clientIsSelected(AbstractClient selectedClient){
+        if (selectedClient==null){
 
-
-
-
-
-
+            return false;
+        }
+        return  true;
+}
 
 }
