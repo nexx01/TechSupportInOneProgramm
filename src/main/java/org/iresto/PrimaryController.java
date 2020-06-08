@@ -13,11 +13,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import org.controlsfx.control.textfield.CustomTextField;
 import org.controlsfx.control.textfield.TextFields;
 import org.iresto.WorkWithBD.DAO.Client_DAO;
@@ -54,6 +56,8 @@ public class PrimaryController implements Initializable {
     private Parent fxmlSupport;
     private SecondaryController secondaryController;
 
+    private Stage windowOfConnectData;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.resourceBundle = resourceBundle;
@@ -63,7 +67,6 @@ public class PrimaryController implements Initializable {
         clnLicense.setCellValueFactory(new PropertyValueFactory<ClientIiko,String>("kindOfLicense"));
         clnStatusOfSupport.setCellValueFactory(new PropertyValueFactory<ClientIiko,String>("statusOfSupport"));
         setupClearButtonField(txtSearch);
-        initLoaderWindowSupport();
         fillData();
 
     }
@@ -103,6 +106,8 @@ public class PrimaryController implements Initializable {
         }
     }
 
+
+    /*Инициализация второго fxml для данных о подключении*/
     private void initLoaderWindowSupport(){
         try{
             fxmlLoader.setLocation(getClass().getResource("secondary.fxml"));
@@ -113,6 +118,28 @@ public class PrimaryController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    /*По нажатию кнопки Подключения вызывается инициализация хагрузки secondary.fxml  и открывается
+    * окно с подключениям*/
+    public void btnGetConnectData(ActionEvent actionEvent){
+        initLoaderWindowSupport();
+        if(windowOfConnectData==null){
+            windowOfConnectData=new Stage();
+            windowOfConnectData.setScene(new Scene(fxmlSupport));
+            windowOfConnectData.setTitle(resourceBundle.getString("windowOfConnecnionData"));
+            windowOfConnectData.setMinHeight(2000);
+            windowOfConnectData.setMinWidth(300);
+
+        }
+windowOfConnectData.showAndWait();
+    }
+
+
+
+
+
+
+
 
 
 }
