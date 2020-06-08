@@ -18,8 +18,9 @@
                 <Label fx:id="lblAddress" layoutX="14.0" layoutY="50.0" prefHeight="23.0" prefWidth="317.0" text="Адрес" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="50.0" />
                 <Label fx:id="lblStatusOfSupport" layoutX="331.0" layoutY="6.0" prefHeight="17.0" prefWidth="169.0" text="Статус ТП" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="331.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="6.0">
                <font>
-                  <Font size="25.0" />
+                  <Font size="18.0" />
                </font></Label>
+            <Label fx:id="lblLicense" layoutX="331.0" layoutY="40.0" prefHeight="17.0" prefWidth="103.0" text="Label" />
             </children>
         </AnchorPane>
         <AnchorPane prefHeight="151.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
@@ -40,6 +41,8 @@
                         <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
                     </padding>
                 </TableView>
+            <Button fx:id="btnConnectByAmmyAdmin" cancelButton="true" defaultButton="true" layoutX="310.0" layoutY="3.0" mnemonicParsing="false" onAction="#actionButtonPressed" prefHeight="60.0" prefWidth="103.0" text="АммиАдмин" />
+            <Button fx:id="btnConnectByAnyDesk" layoutX="310.0" layoutY="73.0" mnemonicParsing="false" onAction="#actionButtonPressed" prefHeight="54.0" prefWidth="103.0" text="AnyDesk" />
             </children>
         </AnchorPane>
         <AnchorPane prefHeight="177.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
@@ -47,11 +50,12 @@
                 <Insets bottom="5.0" left="5.0" right="5.0" />
             </VBox.margin>
             <children>
-                <TableView prefHeight="176.0" prefWidth="425.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="0.0">
+                <TableView fx:id="tableOfWebResources" prefHeight="176.0" prefWidth="425.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                        <TableColumn prefWidth="75.0" text="Тип Хоста" />
-                        <TableColumn prefWidth="227.0" text="Адрес" />
-                        <TableColumn prefWidth="122.0" text="Action" />
+                        <TableColumn fx:id="columnNameWebResource" prefWidth="75.0" text="Тип Хоста" />
+                        <TableColumn fx:id="columnAdressWebResource" prefWidth="227.0" text="Адрес" />
+                        <TableColumn fx:id="columnLoginWebResource" prefWidth="122.0" text="Логин" />
+                  <TableColumn fx:id="columnPswWebResource" prefWidth="75.0" text="Пароль" />
                     </columns>
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
