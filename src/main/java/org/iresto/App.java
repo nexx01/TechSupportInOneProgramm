@@ -19,8 +19,12 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("primary"));
+        scene.setRoot(loadFXML("primary"));
         stage.setScene(scene);
         stage.show();
+
+
+
     }
 
     static void setRoot(String fxml) throws IOException {

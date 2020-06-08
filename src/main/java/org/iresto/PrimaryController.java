@@ -19,6 +19,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.controlsfx.control.textfield.CustomTextField;
 import org.controlsfx.control.textfield.TextFields;
@@ -56,6 +57,7 @@ public class PrimaryController implements Initializable {
     private Parent fxmlSupport;
     private SecondaryController secondaryController;
 
+    private Stage mainStage;
     private Stage windowOfConnectData;
 
     @Override
@@ -68,6 +70,7 @@ public class PrimaryController implements Initializable {
         clnStatusOfSupport.setCellValueFactory(new PropertyValueFactory<ClientIiko,String>("statusOfSupport"));
         setupClearButtonField(txtSearch);
         fillData();
+        initLoaderWindowSupport();
 
     }
 
@@ -119,19 +122,44 @@ public class PrimaryController implements Initializable {
         }
     }
 
+
+
     /*По нажатию кнопки Подключения вызывается инициализация хагрузки secondary.fxml  и открывается
     * окно с подключениям*/
-    public void btnGetConnectData(ActionEvent actionEvent){
-        initLoaderWindowSupport();
+    public void showWindowConnectData(){
         if(windowOfConnectData==null){
             windowOfConnectData=new Stage();
             windowOfConnectData.setScene(new Scene(fxmlSupport));
             windowOfConnectData.setTitle(resourceBundle.getString("windowOfConnecnionData"));
-            windowOfConnectData.setMinHeight(2000);
+            windowOfConnectData.setMinHeight(200);
             windowOfConnectData.setMinWidth(300);
+            windowOfConnectData.initModality(Modality.WINDOW_MODAL);
+           // windowOfConnectData.initOwner();
 
         }
-windowOfConnectData.showAndWait();
+windowOfConnectData.show();
+    }
+
+
+    public void  actionButtonPressed(ActionEvent actionEvent){
+        Object source =actionEvent.getSource();
+
+        if (!(source instanceof Button)){
+            return;
+        }
+
+        ClientIiko selectedClientIiko=(ClientIiko) tableClientBook.getSelectionModel().getSelectedItem();
+
+        Button clickedButton=(Button) source;
+
+        switch (clickedButton.getId()){
+            case "btnConnectedData":
+
+                showWindowConnectData();
+                break;
+
+        }
+
     }
 
 
