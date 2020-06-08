@@ -9,6 +9,10 @@ public class WorkComputer extends AbstractWorkComputer {
         super(typePC);
     }
 
+    public WorkComputer(String typePC, String IDAmmyAdmin, String IDAnyDesk, String pswAmmyAdmin, String pswAnyDesk) {
+        super(typePC, IDAmmyAdmin, IDAnyDesk, pswAmmyAdmin, pswAnyDesk);
+    }
+
     @Override
     public void setHostServer(String hostServer) {
         super.setHostServer(hostServer);

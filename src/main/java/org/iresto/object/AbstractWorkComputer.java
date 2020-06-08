@@ -18,6 +18,14 @@ public abstract class AbstractWorkComputer {
      * например http:\\demo-stend-1.iiko.it:8080
      **/
 
+    public AbstractWorkComputer(String typePC, String IDAmmyAdmin, String IDAnyDesk, String pswAmmyAdmin, String pswAnyDesk) {
+        this.typePC = typePC;
+        this.IDAmmyAdmin = IDAmmyAdmin;
+        this.IDAnyDesk = IDAnyDesk;
+        PswAmmyAdmin = pswAmmyAdmin;
+        PswAnyDesk = pswAnyDesk;
+    }
+
     public AbstractWorkComputer(String typePC) {
         this.typePC = typePC;
     }

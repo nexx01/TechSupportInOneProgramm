@@ -25,4 +25,8 @@ public abstract class AbstractClient {
     public String getAddress() {
         return address;
     }
+
+    public int getClientId() {
+        return clientId;
+    }
 }

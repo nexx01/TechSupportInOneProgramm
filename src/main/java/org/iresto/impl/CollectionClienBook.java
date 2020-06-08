@@ -29,7 +29,7 @@ public class CollectionClienBook implements ClientBook {
         return clientIikoObservableList;
     }
 
-    public  void fillTestDataClientIiko(){
+    /*public  void fillTestDataClientIiko(){
         clientIikoObservableList.add(new ClientIiko(
                 "Мир Пиццы", "ИП Чеснокова", "Павлово,Гвардейцев 18"));
         clientIikoObservableList.add(new ClientIiko(
@@ -44,5 +44,5 @@ public class CollectionClienBook implements ClientBook {
         clientIikoObservableList.get(1).setStatusOfSupport("Только блокеры");
         clientIikoObservableList.get(2).setStatusOfSupport("На полной Тп");
 
-    }
+    }*/
 }
