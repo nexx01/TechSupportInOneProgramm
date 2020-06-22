@@ -2,6 +2,9 @@ package org.iresto;
 
 
 
+import java.awt.*;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -40,6 +43,7 @@ public class SecondaryController implements Initializable {
     public TableColumn<WebResourceIiko, String> columnNameWebResource;
     public TableView<WebResourceIiko> tableOfWebResources;
     public TableColumn<WebResourceIiko, String> columnLoginWebResource;
+    public Button btnGoToWebSite;
 
 
     private ClientIiko clientIiko;
@@ -54,7 +58,9 @@ public class SecondaryController implements Initializable {
         this.resourceBundle = resourceBundle;
     }
 
-    public void setClientIiko(ClientIiko clientIiko) {
+
+    //Этот метод фактически заполняет все данные в окне Подключений
+    public void showConnectedDataClientIiko(ClientIiko clientIiko) {
         if (clientIiko==null){
             return;
         }
@@ -93,10 +99,20 @@ public class SecondaryController implements Initializable {
         tableOfWebResources.setItems(webResourceIikosImpl);//заполняем таблицу интерфейса
     }
 
-
-
+public void actionGoToWebLink() throws URISyntaxException {
+        WebResourceIiko selectedwebResourceIiko=tableOfWebResources.getSelectionModel().getSelectedItem();
+    URI uri = new URI(selectedwebResourceIiko.getWebAddress());
+    Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+    if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+        try {
+            desktop.browse(uri);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
     /*Метод определяющий на какую кнопку нажали и проводит соответствующие действия*/
-    public void actionButtonPressed(ActionEvent actionEvent){
+    public void actionButtonPressed(ActionEvent actionEvent) throws URISyntaxException {
         Object source =actionEvent.getSource();
 
         // если нажата не кнопка - выходим из метода
@@ -123,6 +139,10 @@ public class SecondaryController implements Initializable {
                     String loginAnydesk= (tableOfConnectData.getSelectionModel().getSelectedItem()).getIDAnyDesk();
                     String  passwordAnyDesk= (tableOfConnectData.getSelectionModel().getSelectedItem()).getPswAnyDesk();
                     getConnect.connectAnydesk(loginAnydesk,passwordAnyDesk);
+                break;
+
+            case "btnGoToWebSite":
+                actionGoToWebLink();
                 break;
         }
     }

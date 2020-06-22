@@ -16,15 +16,15 @@ public class App extends Application {
 
     private static Scene scene;
 
+
     @Override
     public void start(Stage stage) throws IOException {
+
         scene = new Scene(loadFXML("primary"));
+
         scene.setRoot(loadFXML("primary"));
         stage.setScene(scene);
         stage.show();
-
-
-
     }
 
     static void setRoot(String fxml) throws IOException {
@@ -34,6 +34,8 @@ public class App extends Application {
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         fxmlLoader.setResources(ResourceBundle.getBundle("org.iresto.bundle"));
+        fxmlLoader.getController();
+
         return fxmlLoader.load();
     }
 

@@ -9,7 +9,6 @@ import javafx.beans.property.ObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -24,9 +23,6 @@ import javafx.stage.Stage;
 import org.controlsfx.control.textfield.CustomTextField;
 import org.controlsfx.control.textfield.TextFields;
 import org.iresto.WorkWithBD.DAO.Client_DAO;
-import org.iresto.impl.CollectionClienBook;
-import org.iresto.impl.CollectionConnectionBook;
-import org.iresto.object.AbstractClient;
 import org.iresto.object.impl.clientIiko.ClientIiko;
 
 public class PrimaryController implements Initializable {
@@ -48,17 +44,30 @@ public class PrimaryController implements Initializable {
     Хотя эта таблица заполняется именно этим типом
     * */
     // private CollectionClienBook clienBookImpl = new CollectionClienBook();
-    private Client_DAO client_dao = new Client_DAO();// создаем экземпляр для подключения к БД
+    final private Client_DAO client_dao = new Client_DAO();// создаем экземпляр для подключения к БД
+    public Button btnEdit;
+    public Button btnAdd;
+    public Button btnDelete;
     private ObservableList<ClientIiko> clientBookImpl = FXCollections.observableArrayList();
 
-    private ResourceBundle resourceBundle;
+    public ResourceBundle resourceBundle;
 
-    private FXMLLoader fxmlLoader = new FXMLLoader();
+    private FXMLLoader fxmlLoader ;
     private Parent fxmlSupport;
+    private Parent fxmlWindowAddOrEditClient;
     private SecondaryController secondaryController;
+    public  AddClientFormController addClientFormController;
 
     private Stage mainStage;
     private Stage windowOfConnectData;
+    private Stage windowAddOrEditClient;
+
+    String nameFXMLWindowOfConnectData="secondary.fxml";
+    String pathFXML="org.iresto.bundle";
+    String nameFXMLWindowAddOrEditClient="AddOrEditClient.fxml";
+
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -70,13 +79,15 @@ public class PrimaryController implements Initializable {
         clnStatusOfSupport.setCellValueFactory(new PropertyValueFactory<ClientIiko, String>("statusOfSupport"));
         setupClearButtonField(txtSearch);
         fillData();
-        initLoaderWindowSupport();
-
     }
+
+    public void setMainStage(Stage mainStage){
+        this.mainStage=mainStage;
+    }
+
 
     /* метод для заполнения таблицы данными из БД*/
     private void fillData() {
-
         clientBookImpl = client_dao.findAllClient();// выкачиваем данные и раззрываем
         tableClientBook.setItems(clientBookImpl);//заполняем таблицу интерфейса
     }
@@ -110,36 +121,7 @@ public class PrimaryController implements Initializable {
     }
 
 
-    /*Инициализация второго fxml для данных о подключении*/
-    private void initLoaderWindowSupport() {
-        try {
-            fxmlLoader.setLocation(getClass().getResource("secondary.fxml"));
-            fxmlLoader.setResources(ResourceBundle.getBundle("org.iresto.bundle"));
-            fxmlSupport = fxmlLoader.load();
-            secondaryController = fxmlLoader.getController();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    /*По нажатию кнопки Подключения вызывается инициализация хагрузки secondary.fxml  и открывается
-     * окно с подключениям*/
-    public void showWindowConnectData() {
-        if (windowOfConnectData == null) {
-            windowOfConnectData = new Stage();
-            windowOfConnectData.setScene(new Scene(fxmlSupport));
-            windowOfConnectData.setTitle(resourceBundle.getString("windowOfConnecnionData"));
-            windowOfConnectData.setMinHeight(200);
-            windowOfConnectData.setMinWidth(300);
-            windowOfConnectData.initModality(Modality.WINDOW_MODAL);
-            // windowOfConnectData.initOwner();
-
-        }
-        windowOfConnectData.show();
-    }
-
-
+/*метод определяет на какую кнопку нажали и проводит соответсвующие действия*/
     public void actionButtonPressed(ActionEvent actionEvent) {
         Object source = actionEvent.getSource();
 
@@ -152,21 +134,82 @@ public class PrimaryController implements Initializable {
         Button clickedButton = (Button) source;
 
         switch (clickedButton.getId()) {
+            /*При выборе кнопки btnConnectedData
+             * 1)запускается метод initFXMLLoaderWindow(nameFXMLWindowOfConnectData,pathFXMLWindowOfConnectData)
+             * Он загружает FXML файл
+             * 2) Вызывается метод setClientIiko(...), слушает какой клиент(строчка) в таблице
+             * 3) showWindowConnectData(selectedClientIiko) формирует сцену с подключениями */
             case "btnConnectedData":
-                secondaryController.setClientIiko((ClientIiko) tableClientBook.getSelectionModel().getSelectedItem());
-                showWindowConnectData();
+                //initFXMLLoaderWindow(nameFXMLWindowOfConnectData,pathFXMLWindowOfConnectData);
+                showWindowConnectData(selectedClientIiko);
+                break;
+            case "btnEdit":
+                showWindowAddOrEditClient(selectedClientIiko);
+                break;
+            case "btnAdd":
+                break;
+            case "btnDelete":
                 break;
 
         }
     }
 
 
-private boolean clientIsSelected(AbstractClient selectedClient){
-        if (selectedClient==null){
-
-            return false;
+    /*Инициализатор fxml Универсальный*/
+    private Parent initFXMLLoaderWindow(String nameFXML, String pathFXML ) {
+        try {
+            fxmlLoader=new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource(nameFXML));
+            fxmlLoader.setResources(ResourceBundle.getBundle(pathFXML));
+            return fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return  true;
-}
+        return null;
+    }
+
+
+    /*По нажатию кнопки Подключения вызывается инициализация хагрузки secondary.fxml  и открывается
+     * окно с подключениям*/
+    public void showWindowConnectData(ClientIiko selectedClientIiko) {
+        fxmlSupport =initFXMLLoaderWindow(nameFXMLWindowOfConnectData,pathFXML);
+        secondaryController = fxmlLoader.getController();
+        secondaryController.showConnectedDataClientIiko((ClientIiko) tableClientBook.getSelectionModel().getSelectedItem());
+
+       if (windowOfConnectData == null) { // условие чтобы открывалось одно второе окно
+            windowOfConnectData = new Stage();
+            windowOfConnectData.setScene(new Scene(fxmlSupport));
+            String titleOfWindow=
+                    selectedClientIiko.getBrand()+" " +selectedClientIiko.getLegalEntity()
+                            +" "+selectedClientIiko.getAddress();
+            windowOfConnectData.setTitle(titleOfWindow);
+            windowOfConnectData.setMinHeight(200);
+            windowOfConnectData.setMinWidth(300);
+            windowOfConnectData.initModality(Modality.WINDOW_MODAL);
+            // windowOfConnectData.initOwner();
+
+        }
+        windowOfConnectData.show();
+
+    }
+
+    public void showWindowAddOrEditClient(ClientIiko selectedClientIiko){
+        if(selectedClientIiko!=null){
+        fxmlWindowAddOrEditClient=initFXMLLoaderWindow(nameFXMLWindowAddOrEditClient,pathFXML);
+        addClientFormController=fxmlLoader.getController();
+        if(windowAddOrEditClient==null) {
+            windowAddOrEditClient = new Stage();
+            windowAddOrEditClient.setScene(new Scene((fxmlWindowAddOrEditClient)));
+            windowAddOrEditClient.setTitle(selectedClientIiko.getBrand()+" "+ selectedClientIiko.getLegalEntity()+
+                                                  " "+selectedClientIiko.getAddress());
+            windowAddOrEditClient.setMinWidth(150);
+            windowAddOrEditClient.setMinHeight(200);
+            windowAddOrEditClient.initModality(Modality.WINDOW_MODAL);
+            windowAddOrEditClient.initOwner(mainStage);
+            windowAddOrEditClient.show();
+        }
+        }
+    }
+
 
 }

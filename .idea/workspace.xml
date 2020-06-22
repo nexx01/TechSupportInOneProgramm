@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="TechOne_1:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
+    <expand />
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f990358-d0f9-4b4e-a265-007cabb77481" name="Default Changelist" comment="">
+    <list default="true" id="4f990358-d0f9-4b4e-a265-007cabb77481" name="Default Changelist" comment="пофикшены некоторые ошибки">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/iresto/AddClientFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddConnectFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/AddConnectDataForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/AddOrEditClient.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/impl/GetConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/impl/GetConnect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/bundle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/bundle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/bundle_ru_Ru.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/bundle_ru_Ru.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/primary.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/secondary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/secondary.fxml" afterDir="false" />
     </list>
+    <list id="b097a2bd-e837-4e29-a68b-64ebc13893a2" name="Revert &quot;in pom added dependency of mysql-connector-java &lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt; &lt;version&gt;8.0.12&lt;/version&gt; &lt;/dependency&gt;&quot;" comment="Revert &quot;in pom added dependency of mysql-connector-java   &lt;dependency&gt;             &lt;groupId&gt;mysql&lt;/groupId&gt;             &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;             &lt;version&gt;8.0.12&lt;/version&gt;         &lt;/dependency&gt;&quot;&#10;&#10;This reverts commit 06e76109" />
     <list id="bdf2d506-c732-44a6-8877-e09d94ec66d1" name="Revert &quot;test6 commit&quot;" comment="Revert &quot;test6 commit&quot;&#10;&#10;This reverts commit 0c44a83d" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,17 +41,20 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="properties" />
+        <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ClientUniversal" />
+        <entry key="$PROJECT_DIR$" value="ActivateWindowSupport" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectId" id="1dAtrRTOcfI7ISh5Q9U9AUmUPqE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -50,11 +62,18 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Program Files/Java/jdk-14.0.1/lib" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/14/javafx-graphics-14.jar!/" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.63908046" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.iresto" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -74,6 +93,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>
@@ -81,6 +101,13 @@
     <configuration />
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4f990358-d0f9-4b4e-a265-007cabb77481" name="Default Changelist" comment="пофикшены некоторые ошибки" />
+      <created>1591879926702</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591879926702</updated>
+    </task>
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -88,19 +115,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -108,37 +123,148 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591448817953">
+    <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592601684750">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1591448817953" />
+    <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1592601684750" />
+    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser" timestamp="1592722504266">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1592722504266" />
+    <state x="466" y="263" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1592761131136">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="466" y="263" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.738@0.0.1366.738" timestamp="1592761131136" />
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591468037253">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1591468037253" />
-    <state x="389" y="110" key="FileChooserDialogImpl" timestamp="1591448876371">
+    <state x="389" y="110" key="FileChooserDialogImpl" timestamp="1592757555718">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="389" y="110" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1591448876371" />
-    <state width="1323" height="152" key="GridCell.Tab.0.bottom" timestamp="1591468145286">
+    <state x="389" y="110" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1592757555718" />
+    <state x="559" y="267" key="Github.ShareDialog" timestamp="1592393878519">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="152" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1591468145286" />
-    <state width="1323" height="152" key="GridCell.Tab.0.center" timestamp="1591468145285">
+    <state x="559" y="267" key="Github.ShareDialog/0.0.1366.738@0.0.1366.738" timestamp="1592393878519" />
+    <state width="880" height="46" key="GridCell.Tab.0.bottom" timestamp="1592822592597">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="152" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1591468145285" />
-    <state width="1323" height="152" key="GridCell.Tab.0.left" timestamp="1591468145284">
+    <state width="880" height="46" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1592822592597" />
+    <state width="880" height="46" key="GridCell.Tab.0.center" timestamp="1592822592596">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="152" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1591468145284" />
-    <state width="1323" height="152" key="GridCell.Tab.0.right" timestamp="1591468145285">
+    <state width="880" height="46" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1592822592596" />
+    <state width="880" height="46" key="GridCell.Tab.0.left" timestamp="1592822592595">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="152" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1591468145285" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1591467959242">
+    <state width="880" height="46" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1592822592595" />
+    <state width="880" height="46" key="GridCell.Tab.0.right" timestamp="1592822592596">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1591467959242" />
+    <state width="880" height="46" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1592822592596" />
+    <state width="880" height="180" key="GridCell.Tab.1.bottom" timestamp="1592815508934">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="880" height="180" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1592815508934" />
+    <state width="880" height="180" key="GridCell.Tab.1.center" timestamp="1592815508934">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="880" height="180" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1592815508934" />
+    <state width="880" height="180" key="GridCell.Tab.1.left" timestamp="1592815508933">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="880" height="180" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1592815508933" />
+    <state width="880" height="180" key="GridCell.Tab.1.right" timestamp="1592815508934">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="880" height="180" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1592815508934" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1591940795975">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1591940795975" />
+    <state x="550" y="113" key="Vcs.Push.Dialog.v2" timestamp="1592631790398">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="550" y="113" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1592631790398" />
+    <state x="169" y="98" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1592756934350">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="169" y="98" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.738@0.0.1366.738" timestamp="1592756934350" />
+    <state x="131" y="51" key="new project wizard" timestamp="1592733193546">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="131" y="51" key="new project wizard/0.0.1366.738@0.0.1366.738" timestamp="1592733193546" />
+    <state x="513" y="160" key="svn.repositoryBrowser" timestamp="1592394047644">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="513" y="160" key="svn.repositoryBrowser/0.0.1366.738@0.0.1366.738" timestamp="1592394047644" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/ConnectData_DAO.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/WebResource_DAO.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java</url>
+          <line>159</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java</url>
+          <line>188</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java</url>
+          <line>149</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/App.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/App.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java</url>
+          <line>107</line>
+          <properties class="org.iresto.PrimaryController" method="actionSearch">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java</url>
+          <line>173</line>
+          <properties class="org.iresto.PrimaryController" method="showWindowConnectData">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

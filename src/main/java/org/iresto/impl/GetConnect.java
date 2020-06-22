@@ -10,9 +10,12 @@ public class GetConnect implements Connect {
     @Override
     public void connectAnydesk(String loginAnydesk,String passwordAnyDesk) {
         try {
-            ProcessBuilder processBuilder = new ProcessBuilder(
+            /*ProcessBuilder processBuilder = new ProcessBuilder(
                     "cmd", "/C", "start C:\\\"Program Files (x86)\"\\AnyDesk\\anydesk.exe echo password / anydesk "
-                                         + loginAnydesk + " --with-" + passwordAnyDesk);
+                                         + loginAnydesk + " --with-" + passwordAnyDesk);*/
+            ProcessBuilder processBuilder = new ProcessBuilder(
+                    "cmd", "/C", "echo "+passwordAnyDesk+"|C:\\\"Program Files (x86)\"\\AnyDesk\\anydesk.exe "+loginAnydesk+" --with-password");
+            //echo Tm7SN?dm|"C:\AnyDesk\AnyDesk.exe" 425035387 --with-password
             Process process = processBuilder.start();
         } catch (IOException e) {
 

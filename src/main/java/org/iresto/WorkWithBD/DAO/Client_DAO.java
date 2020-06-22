@@ -31,4 +31,27 @@ public class Client_DAO {
         }
         return null;
     }
+
+    public boolean AddClient(String brand,String legalyName,String address,String kindOfLicense, String statusOfSupport){
+        String INSERT_QUERY="INSERT INTO clientiiko (brand,legalyName,address,kindOfLicense,statusOfSupport)"+
+                " VALUES ('?','?','?','?','?')";
+        try(Connection connection=ConnectorDB.getConnecton();
+            PreparedStatement preparedStatement=connection.prepareStatement(INSERT_QUERY)) {
+            preparedStatement.setString(1,brand);
+            preparedStatement.setString(2,legalyName);
+            preparedStatement.setString(3,address);
+            preparedStatement.setString(4,kindOfLicense);
+            preparedStatement.setString(5,statusOfSupport);
+            preparedStatement.executeQuery();
+            return true;
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+
+        return false;
+    }
+
+
 }

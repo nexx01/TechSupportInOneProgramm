@@ -65,6 +65,7 @@
                     </padding>
                 </TableView>
                 <Button layoutX="448.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Открыть BackOffice" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="0.0" />
+            <Button fx:id="btnGoToWebSite" cancelButton="true" defaultButton="true" layoutX="448.0" layoutY="38.0" mnemonicParsing="false" onAction="#actionButtonPressed" prefHeight="25.0" prefWidth="128.0" text="Перейти по ссылке" />
             </children>
         </AnchorPane>
     </children>

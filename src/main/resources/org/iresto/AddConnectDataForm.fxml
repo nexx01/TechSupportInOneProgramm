@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+
+   <children>
+      <AnchorPane prefHeight="144.0" prefWidth="600.0">
+         <children>
+            <TableView layoutX="13.0" layoutY="5.0" prefHeight="164.0" prefWidth="574.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Тип ПК" />
+                <TableColumn prefWidth="112.0" text="Ammy" />
+                  <TableColumn prefWidth="119.0" text="PswAmmy" />
+                  <TableColumn prefWidth="124.0" text="Any" />
+                  <TableColumn prefWidth="141.0" text="PswAny" />
+              </columns>
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <VBox.margin>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </VBox.margin>
+         <children>
+            <TableView layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="574.0">
+              <columns>
+                <TableColumn prefWidth="115.0" text="Web Resourse" />
+                <TableColumn prefWidth="279.0" text="Address Web" />
+                  <TableColumn prefWidth="179.0" text="NameLabelBackOffice" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
