@@ -61,7 +61,7 @@ public class AddClientFormController implements Initializable{
         if(client==null) {
             client =new ClientIiko();
             setNewValues();
-            client_dao.addClient(client);
+            client_dao.insertClient(client);
         } else {
             setNewValues();
             client_dao.updateClient(client);

@@ -17,8 +17,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4f990358-d0f9-4b4e-a265-007cabb77481" name="Default Changelist" comment="пофикшены некоторые ошибки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddClientFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddClientFormController.java" afterDir="false" />
     </list>
     <list id="b097a2bd-e837-4e29-a68b-64ebc13893a2" name="Revert &quot;in pom added dependency of mysql-connector-java &lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt; &lt;version&gt;8.0.12&lt;/version&gt; &lt;/dependency&gt;&quot;" comment="Revert &quot;in pom added dependency of mysql-connector-java   &lt;dependency&gt;             &lt;groupId&gt;mysql&lt;/groupId&gt;             &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;             &lt;version&gt;8.0.12&lt;/version&gt;         &lt;/dependency&gt;&quot;&#10;&#10;This reverts commit 06e76109" />
     <list id="bdf2d506-c732-44a6-8877-e09d94ec66d1" name="Revert &quot;test6 commit&quot;" comment="Revert &quot;test6 commit&quot;&#10;&#10;This reverts commit 0c44a83d" />
@@ -39,7 +39,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="GoToWebSite" />
+        <entry key="$PROJECT_DIR$" value="e4c426e03360c2018203b41a3acb894979f8aa91" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -105,7 +105,21 @@
       <option name="project" value="LOCAL" />
       <updated>1592828205296</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed error with pressed buttom EDIT&#10;No fixed error with press buttom ADD">
+      <created>1593100908323</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1593100908323</updated>
+    </task>
+    <task id="LOCAL-00003" summary="появляется окно добавить&#10;Но при нажатии САВЭ выскакивает ошибка">
+      <created>1593101220169</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1593101220169</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,7 +127,34 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="AddButton_Add" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="AddButton_Add" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -123,7 +164,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Приложение перестроено для &#10;откна редактирования Данных о клиенте" />
     <MESSAGE value="Fixed error with pressed buttom EDIT&#10;No fixed error with press buttom ADD" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed error with pressed buttom EDIT&#10;No fixed error with press buttom ADD" />
+    <MESSAGE value="появляется окно добавить&#10;Но при нажатии САВЭ выскакивает ошибка" />
+    <option name="LAST_COMMIT_MESSAGE" value="появляется окно добавить&#10;Но при нажатии САВЭ выскакивает ошибка" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592601684750">
@@ -150,38 +192,38 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="559" y="267" key="Github.ShareDialog/0.0.1366.738@0.0.1366.738" timestamp="1592393878519" />
-    <state width="1323" height="62" key="GridCell.Tab.0.bottom" timestamp="1593100662090">
+    <state width="1323" height="202" key="GridCell.Tab.0.bottom" timestamp="1593107668671">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="62" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593100662090" />
-    <state width="1323" height="62" key="GridCell.Tab.0.center" timestamp="1593100662090">
+    <state width="1323" height="202" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593107668671" />
+    <state width="1323" height="202" key="GridCell.Tab.0.center" timestamp="1593107668670">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="62" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593100662090" />
-    <state width="1323" height="62" key="GridCell.Tab.0.left" timestamp="1593100662089">
+    <state width="1323" height="202" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593107668670" />
+    <state width="1323" height="202" key="GridCell.Tab.0.left" timestamp="1593107668670">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="62" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593100662089" />
-    <state width="1323" height="62" key="GridCell.Tab.0.right" timestamp="1593100662090">
+    <state width="1323" height="202" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593107668670" />
+    <state width="1323" height="202" key="GridCell.Tab.0.right" timestamp="1593107668670">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="62" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593100662090" />
-    <state width="1323" height="188" key="GridCell.Tab.1.bottom" timestamp="1593090774187">
+    <state width="1323" height="202" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593107668670" />
+    <state width="1323" height="188" key="GridCell.Tab.1.bottom" timestamp="1593101600266">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="188" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593090774187" />
-    <state width="1323" height="188" key="GridCell.Tab.1.center" timestamp="1593090774186">
+    <state width="1323" height="188" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593101600266" />
+    <state width="1323" height="188" key="GridCell.Tab.1.center" timestamp="1593101600265">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="188" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1593090774186" />
-    <state width="1323" height="188" key="GridCell.Tab.1.left" timestamp="1593090774186">
+    <state width="1323" height="188" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1593101600265" />
+    <state width="1323" height="188" key="GridCell.Tab.1.left" timestamp="1593101600265">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="188" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1593090774186" />
-    <state width="1323" height="188" key="GridCell.Tab.1.right" timestamp="1593090774186">
+    <state width="1323" height="188" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1593101600265" />
+    <state width="1323" height="188" key="GridCell.Tab.1.right" timestamp="1593101600266">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="188" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1593090774186" />
+    <state width="1323" height="188" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1593101600266" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1591940795975">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -232,12 +274,12 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java</url>
-          <line>169</line>
+          <line>167</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java</url>
-          <line>198</line>
+          <line>196</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
@@ -247,38 +289,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java</url>
-          <line>64</line>
+          <line>48</line>
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java</url>
-          <line>55</line>
+          <line>46</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java</url>
-          <line>49</line>
+          <line>40</line>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java</url>
-          <line>52</line>
+          <line>43</line>
           <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java</url>
-          <line>53</line>
+          <line>44</line>
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java</url>
-          <line>54</line>
+          <line>45</line>
           <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddClientFormController.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddClientFormController.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="89" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
