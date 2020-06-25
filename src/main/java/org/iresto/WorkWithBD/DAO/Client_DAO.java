@@ -45,6 +45,7 @@ public class Client_DAO {
     }
 
     private boolean updateOrInsertClient(String QUERY,AbstractClientIIKO clientIiko){
+        QUERY ="UPDATE clientiiko SET brand=?, legalyName=?, address=?, kindOfLicense=?, statusOfSupport=? WHERE id =?;";
         try(Connection connection=ConnectorDB.getConnecton();
             PreparedStatement preparedStatement=connection.prepareStatement(QUERY)) {
             System.out.println(clientIiko.getBrand());

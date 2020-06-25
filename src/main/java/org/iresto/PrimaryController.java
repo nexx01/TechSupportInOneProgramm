@@ -147,14 +147,16 @@ public class PrimaryController implements Initializable {
                 if(!clientIsSelected(selectedClientIiko)){
                     return;
                 }
-                showWindowAddOrEditClient(resourceBundle.getString("Edit: "
-                + selectedClientIiko.getBrand()+ " "+selectedClientIiko.getLegalEntity()+" "
-                +selectedClientIiko.getAddress()), mainStage);
+                showWindowAddOrEditClient(resourceBundle.getString("Edit")
+                                                  + selectedClientIiko.getBrand()+ " "
+                                                  +selectedClientIiko.getLegalEntity()+" "
+                +selectedClientIiko.getAddress(), mainStage);
                 addClientFormController.setClient(selectedClientIiko);
                 break;
             case "btnAdd":
                 showWindowAddOrEditClient(resourceBundle.getString("Add"), mainStage);
-
+                selectedClientIiko=null;
+                addClientFormController.setClient(selectedClientIiko);
                 break;
             case "btnDelete":
                 break;
