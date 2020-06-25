@@ -155,8 +155,6 @@ public class PrimaryController implements Initializable {
                 break;
             case "btnAdd":
                 showWindowAddOrEditClient(resourceBundle.getString("Add"), mainStage);
-                selectedClientIiko=null;
-                addClientFormController.setClient(selectedClientIiko);
                 break;
             case "btnDelete":
                 break;

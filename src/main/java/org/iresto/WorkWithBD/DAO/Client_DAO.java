@@ -60,12 +60,12 @@ public class Client_DAO {
             * иначе выполняем executeQuery(), т.е. создаем новую строчку в таблице clientiiko
             * ID в этом случае присоится самой БД
           */
-         // if (clientIiko.getClientId()!=0) {
+         if (clientIiko.getClientId()!=0) {
                 preparedStatement.setInt(6,clientIiko.getClientId());
                 preparedStatement.executeUpdate();
-         //   } else {
-               // preparedStatement.executeQuery();
-           //// }
+           } else {
+                preparedStatement.executeQuery();
+            }
             return true;
 
         } catch (SQLException throwables) {
