@@ -4,6 +4,9 @@ public class AbstractClientIIKO extends AbstractClient {
     public String kindOfLicense;
     public String statusOfSupport;
 
+    public AbstractClientIIKO() {
+    }
+
     public AbstractClientIIKO(int clientId, String brand, String legalEntity, String address) {
         super(clientId, brand, legalEntity, address);
     }
@@ -43,6 +46,21 @@ public class AbstractClientIIKO extends AbstractClient {
 
     public void setStatusOfSupport(String statusOfSupport) {
         this.statusOfSupport = statusOfSupport;
+    }
+
+    @Override
+    public void setBrand(String brand) {
+        super.setBrand(brand);
+    }
+
+    @Override
+    public void setLegalEntity(String legalEntity) {
+        super.setLegalEntity(legalEntity);
+    }
+
+    @Override
+    public void setAddress(String address) {
+        super.setAddress(address);
     }
 
     @Override

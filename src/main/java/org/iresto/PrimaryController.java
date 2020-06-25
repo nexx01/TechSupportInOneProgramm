@@ -13,17 +13,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.controlsfx.control.textfield.CustomTextField;
 import org.controlsfx.control.textfield.TextFields;
 import org.iresto.WorkWithBD.DAO.Client_DAO;
+import org.iresto.controllers.AddClientFormController;
+import org.iresto.object.AbstractClientIIKO;
 import org.iresto.object.impl.clientIiko.ClientIiko;
+import org.iresto.utils.DialogManager;
 
 public class PrimaryController implements Initializable {
 
@@ -56,7 +56,7 @@ public class PrimaryController implements Initializable {
     private Parent fxmlSupport;
     private Parent fxmlWindowAddOrEditClient;
     private SecondaryController secondaryController;
-    public  AddClientFormController addClientFormController;
+    public AddClientFormController addClientFormController;
 
     private Stage mainStage;
     private Stage windowOfConnectData;
@@ -144,9 +144,17 @@ public class PrimaryController implements Initializable {
                 showWindowConnectData(selectedClientIiko);
                 break;
             case "btnEdit":
-                showWindowAddOrEditClient(selectedClientIiko);
+                if(!clientIsSelected(selectedClientIiko)){
+                    return;
+                }
+                showWindowAddOrEditClient(resourceBundle.getString("Edit: "
+                + selectedClientIiko.getBrand()+ " "+selectedClientIiko.getLegalEntity()+" "
+                +selectedClientIiko.getAddress()), mainStage);
+                addClientFormController.setClient(selectedClientIiko);
                 break;
             case "btnAdd":
+                showWindowAddOrEditClient(resourceBundle.getString("Add"), mainStage);
+
                 break;
             case "btnDelete":
                 break;
@@ -193,15 +201,13 @@ public class PrimaryController implements Initializable {
 
     }
 
-    public void showWindowAddOrEditClient(ClientIiko selectedClientIiko){
-        if(selectedClientIiko!=null){
+    public void showWindowAddOrEditClient(String titleOfWindow, Stage mainStage){
         fxmlWindowAddOrEditClient=initFXMLLoaderWindow(nameFXMLWindowAddOrEditClient,pathFXML);
         addClientFormController=fxmlLoader.getController();
         if(windowAddOrEditClient==null) {
             windowAddOrEditClient = new Stage();
             windowAddOrEditClient.setScene(new Scene((fxmlWindowAddOrEditClient)));
-            windowAddOrEditClient.setTitle(selectedClientIiko.getBrand()+" "+ selectedClientIiko.getLegalEntity()+
-                                                  " "+selectedClientIiko.getAddress());
+            windowAddOrEditClient.setTitle(titleOfWindow);
             windowAddOrEditClient.setMinWidth(150);
             windowAddOrEditClient.setMinHeight(200);
             windowAddOrEditClient.initModality(Modality.WINDOW_MODAL);
@@ -209,7 +215,14 @@ public class PrimaryController implements Initializable {
             windowAddOrEditClient.show();
         }
         }
-    }
 
+
+    private  boolean clientIsSelected(AbstractClientIIKO selectedClient){
+        if(selectedClient==null){
+            DialogManager.showInfoDialog(resourceBundle.getString("Error"), resourceBundle.getString("SelectedPerson"));
+            return false;
+        }
+        return true;
+    }
 
 }

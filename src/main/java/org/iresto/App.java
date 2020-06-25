@@ -14,30 +14,46 @@ import java.util.ResourceBundle;
  */
 public class App extends Application {
 
-    private static Scene scene;
+    private  Scene scene;
+    private  FXMLLoader  fxmlLoader;
 
 
     @Override
-    public void start(Stage stage) throws IOException {
-
-        scene = new Scene(loadFXML("primary"));
-
-        scene.setRoot(loadFXML("primary"));
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
-    }
-
-    private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+    public void start(Stage primarystage) throws IOException {
+        fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(App.class.getResource( "primary.fxml"));
         fxmlLoader.setResources(ResourceBundle.getBundle("org.iresto.bundle"));
-        fxmlLoader.getController();
 
-        return fxmlLoader.load();
+        Parent fxmlPrimary=fxmlLoader.load();
+        PrimaryController primaryController=fxmlLoader.getController();
+        primaryController.setMainStage(primarystage);
+
+        scene = new Scene(fxmlPrimary);
+        scene.setRoot(fxmlPrimary);
+        primarystage.setScene(scene);
+        primarystage.show();
     }
+
+   /*  void setRoot(String fxml) throws IOException {
+        scene.setRoot(fxmlPrimary);
+    }*/
+
+  /*  private static FXMLLoader getFxmlLoader(String fxml){
+        fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(App.class.getResource(fxml + ".fxml"));
+        fxmlLoader.setResources(ResourceBundle.getBundle("org.iresto.bundle"));
+        return fxmlLoader;
+    }*//*
+
+    private  Parent loadFXML(String fxml) throws IOException {
+        fxmlLoader = new FXMLLoader();
+        //App.class.getResource(fxml + ".fxml")
+        fxmlLoader.setLocation(App.class.getResource(fxml + ".fxml"));
+        fxmlLoader.setResources(ResourceBundle.getBundle("org.iresto.bundle"));
+        return fxmlLoader.load();
+    }*/
+
+
 
     public static void main(String[] args) {
         launch();

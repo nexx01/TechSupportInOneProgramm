@@ -6,6 +6,8 @@ public abstract class AbstractClient {
     private  String legalEntity;
     private  String address;
 
+    public AbstractClient() {
+    }
 
     public AbstractClient(int clientId, String brand, String legalEntity, String address) {
         this.clientId = clientId;
@@ -28,5 +30,17 @@ public abstract class AbstractClient {
 
     public int getClientId() {
         return clientId;
+    }
+
+    public void setBrand(String brand) {
+        Brand = brand;
+    }
+
+    public void setLegalEntity(String legalEntity) {
+        this.legalEntity = legalEntity;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

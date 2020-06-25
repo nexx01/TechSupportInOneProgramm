@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="295.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iresto.AddClientFormController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="295.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iresto.controllers.AddClientFormController">
    <children>
       <AnchorPane prefHeight="295.0" prefWidth="522.0">
          <children>
@@ -27,7 +27,7 @@
             <Label layoutX="32.0" layoutY="149.0" text="%Address" />
             <Label layoutX="32.0" layoutY="203.0" text="%License" />
             <Label layoutX="32.0" layoutY="260.0" text="%StatusOfSupport" />
-            <Button fx:id="btnSave" layoutX="421.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="88.0" text="Save" />
+            <Button fx:id="btnSave" layoutX="421.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="88.0" text="Save" onAction="#actionSave"/>
          </children>
       </AnchorPane>
    </children>

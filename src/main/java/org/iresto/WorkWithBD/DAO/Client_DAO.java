@@ -3,6 +3,8 @@ package org.iresto.WorkWithBD.DAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.iresto.WorkWithBD.ConnectorDB;
+import org.iresto.object.AbstractClient;
+import org.iresto.object.AbstractClientIIKO;
 import org.iresto.object.impl.clientIiko.ClientIiko;
 
 import java.sql.*;
@@ -32,24 +34,42 @@ public class Client_DAO {
         return null;
     }
 
-    public boolean AddClient(String brand,String legalyName,String address,String kindOfLicense, String statusOfSupport){
-        String INSERT_QUERY="INSERT INTO clientiiko (brand,legalyName,address,kindOfLicense,statusOfSupport)"+
-                " VALUES ('?','?','?','?','?')";
+    public boolean addClient(AbstractClientIIKO clientIiko){
+        String INSERT_QUERY="INSERT INTO clientiiko (brand,legalyName,address,kindOfLicense,statusOfSupport) VALUES ('?','?','?','?','?');";
+        return updateOrInsertClient(INSERT_QUERY, clientIiko);
+    }
+
+    public boolean updateClient(AbstractClientIIKO clientIiko){
+        String UPDATE_QUERY ="UPDATE clientiiko SET brand=?, legalyName=?, address=?, kindOfLicense=?, statusOfSupport=? WHERE id =?;";
+        return updateOrInsertClient(UPDATE_QUERY, clientIiko);
+    }
+
+    private boolean updateOrInsertClient(String QUERY,AbstractClientIIKO clientIiko){
         try(Connection connection=ConnectorDB.getConnecton();
-            PreparedStatement preparedStatement=connection.prepareStatement(INSERT_QUERY)) {
-            preparedStatement.setString(1,brand);
-            preparedStatement.setString(2,legalyName);
-            preparedStatement.setString(3,address);
-            preparedStatement.setString(4,kindOfLicense);
-            preparedStatement.setString(5,statusOfSupport);
-            preparedStatement.executeQuery();
+            PreparedStatement preparedStatement=connection.prepareStatement(QUERY)) {
+            System.out.println(clientIiko.getBrand());
+            preparedStatement.setString(1,clientIiko.getBrand());
+            preparedStatement.setString(2,clientIiko.getLegalEntity());
+            preparedStatement.setString(3,clientIiko.getAddress());
+            preparedStatement.setString(4,clientIiko.kindOfLicense);
+            preparedStatement.setString(5,clientIiko.statusOfSupport);
+            /*Если  ID clientIiko не равен 0 - это значит, что этот клиент уже был в БД, значит выполняем
+            * 1)Присваивание шестого аргумента в SQL запрос
+            * 2) выполняем Update в БД
+            * иначе выполняем executeQuery(), т.е. создаем новую строчку в таблице clientiiko
+            * ID в этом случае присоится самой БД
+          */
+         // if (clientIiko.getClientId()!=0) {
+                preparedStatement.setInt(6,clientIiko.getClientId());
+                preparedStatement.executeUpdate();
+         //   } else {
+               // preparedStatement.executeQuery();
+           //// }
             return true;
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
-
         return false;
     }
 

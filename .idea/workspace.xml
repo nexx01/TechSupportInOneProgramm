@@ -16,19 +16,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f990358-d0f9-4b4e-a265-007cabb77481" name="Default Changelist" comment="пофикшены некоторые ошибки">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iresto/AddClientFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddConnectFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/AddConnectDataForm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/AddOrEditClient.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/iresto/utils/DialogManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/AddClientFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddClientFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/impl/GetConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/impl/GetConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/object/AbstractClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/object/AbstractClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/object/AbstractClientIIKO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/object/AbstractClientIIKO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/object/impl/clientIiko/ClientIiko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/object/impl/clientIiko/ClientIiko.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/AddOrEditClient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/AddOrEditClient.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/bundle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/bundle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/primary.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/secondary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/secondary.fxml" afterDir="false" />
     </list>
     <list id="b097a2bd-e837-4e29-a68b-64ebc13893a2" name="Revert &quot;in pom added dependency of mysql-connector-java &lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt; &lt;version&gt;8.0.12&lt;/version&gt; &lt;/dependency&gt;&quot;" comment="Revert &quot;in pom added dependency of mysql-connector-java   &lt;dependency&gt;             &lt;groupId&gt;mysql&lt;/groupId&gt;             &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;             &lt;version&gt;8.0.12&lt;/version&gt;         &lt;/dependency&gt;&quot;&#10;&#10;This reverts commit 06e76109" />
     <list id="bdf2d506-c732-44a6-8877-e09d94ec66d1" name="Revert &quot;test6 commit&quot;" comment="Revert &quot;test6 commit&quot;&#10;&#10;This reverts commit 0c44a83d" />
@@ -49,7 +48,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ActivateWindowSupport" />
+        <entry key="$PROJECT_DIR$" value="GoToWebSite" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -82,7 +81,7 @@
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-14.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.iresto.*" />
+          <option name="PATTERN" value="org.iresto.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,6 +107,14 @@
       <option name="presentableId" value="Default" />
       <updated>1591879926702</updated>
     </task>
+    <task id="LOCAL-00001" summary="Приложение перестроено для &#10;откна редактирования Данных о клиенте">
+      <created>1592828205295</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592828205296</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,15 +129,19 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Приложение перестроено для &#10;откна редактирования Данных о клиенте" />
+    <option name="LAST_COMMIT_MESSAGE" value="Приложение перестроено для &#10;откна редактирования Данных о клиенте" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592601684750">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1592601684750" />
-    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser" timestamp="1592722504266">
+    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser" timestamp="1593080555519">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1592722504266" />
+    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1593080555519" />
     <state x="466" y="263" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1592761131136">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -147,38 +158,38 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="559" y="267" key="Github.ShareDialog/0.0.1366.738@0.0.1366.738" timestamp="1592393878519" />
-    <state width="880" height="46" key="GridCell.Tab.0.bottom" timestamp="1592822592597">
+    <state width="1323" height="169" key="GridCell.Tab.0.bottom" timestamp="1593090969391">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="880" height="46" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1592822592597" />
-    <state width="880" height="46" key="GridCell.Tab.0.center" timestamp="1592822592596">
+    <state width="1323" height="169" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593090969391" />
+    <state width="1323" height="169" key="GridCell.Tab.0.center" timestamp="1593090969391">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="880" height="46" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1592822592596" />
-    <state width="880" height="46" key="GridCell.Tab.0.left" timestamp="1592822592595">
+    <state width="1323" height="169" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593090969391" />
+    <state width="1323" height="169" key="GridCell.Tab.0.left" timestamp="1593090969390">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="880" height="46" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1592822592595" />
-    <state width="880" height="46" key="GridCell.Tab.0.right" timestamp="1592822592596">
+    <state width="1323" height="169" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593090969390" />
+    <state width="1323" height="169" key="GridCell.Tab.0.right" timestamp="1593090969391">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="880" height="46" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1592822592596" />
-    <state width="880" height="180" key="GridCell.Tab.1.bottom" timestamp="1592815508934">
+    <state width="1323" height="169" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593090969391" />
+    <state width="1323" height="188" key="GridCell.Tab.1.bottom" timestamp="1593090774187">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="880" height="180" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1592815508934" />
-    <state width="880" height="180" key="GridCell.Tab.1.center" timestamp="1592815508934">
+    <state width="1323" height="188" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593090774187" />
+    <state width="1323" height="188" key="GridCell.Tab.1.center" timestamp="1593090774186">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="880" height="180" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1592815508934" />
-    <state width="880" height="180" key="GridCell.Tab.1.left" timestamp="1592815508933">
+    <state width="1323" height="188" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1593090774186" />
+    <state width="1323" height="188" key="GridCell.Tab.1.left" timestamp="1593090774186">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="880" height="180" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1592815508933" />
-    <state width="880" height="180" key="GridCell.Tab.1.right" timestamp="1592815508934">
+    <state width="1323" height="188" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1593090774186" />
+    <state width="1323" height="188" key="GridCell.Tab.1.right" timestamp="1593090774186">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="880" height="180" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1592815508934" />
+    <state width="1323" height="188" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1593090774186" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1591940795975">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -187,6 +198,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="550" y="113" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1592631790398" />
+    <state width="691" height="377" key="XDebugger.FullValuePopup" timestamp="1593007212247">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="691" height="377" key="XDebugger.FullValuePopup/0.0.1366.738@0.0.1366.738" timestamp="1593007212247" />
     <state x="169" y="98" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1592756934350">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -225,12 +240,12 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java</url>
-          <line>159</line>
+          <line>167</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java</url>
-          <line>188</line>
+          <line>196</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
@@ -239,30 +254,44 @@
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/App.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="48" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/App.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="49" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="63" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java</url>
-          <line>107</line>
-          <properties class="org.iresto.PrimaryController" method="actionSearch">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="24" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java</url>
-          <line>173</line>
-          <properties class="org.iresto.PrimaryController" method="showWindowConnectData">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="41" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="87" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
