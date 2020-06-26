@@ -79,6 +79,8 @@ public class PrimaryController implements Initializable {
         clnStatusOfSupport.setCellValueFactory(new PropertyValueFactory<ClientIiko, String>("statusOfSupport"));
         setupClearButtonField(txtSearch);
         fillData();
+
+
     }
 
     public void setMainStage(Stage mainStage){
