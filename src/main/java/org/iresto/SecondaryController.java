@@ -3,6 +3,7 @@ package org.iresto;
 
 
 import java.awt.*;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -11,14 +12,20 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import org.iresto.WorkWithBD.DAO.ConnectData_DAO;
 import org.iresto.WorkWithBD.DAO.WebResource_DAO;
+import org.iresto.controllers.AddConnectFormController;
 import org.iresto.impl.GetConnect;
 import org.iresto.object.impl.WorkComputer.WebResourceIiko;
 import org.iresto.object.impl.WorkComputer.WorkComputer;
@@ -44,6 +51,7 @@ public class SecondaryController implements Initializable {
     public TableView<WebResourceIiko> tableOfWebResources;
     public TableColumn<WebResourceIiko, String> columnLoginWebResource;
     public Button btnGoToWebSite;
+    public Button btnEdit;
 
     private ClientIiko clientIiko;
    private ObservableList<WorkComputer> workComputersImpl=FXCollections.observableArrayList();
@@ -52,6 +60,16 @@ public class SecondaryController implements Initializable {
    private WebResource_DAO webResource_dao= new WebResource_DAO();
 
     private ResourceBundle resourceBundle;
+    private FXMLLoader fxmlLoader ; // Не уверен что здесь это нужно и возможно лучше
+    //забрать например из ПримариКонтроллера
+    private Stage mainstage;
+    private Stage windowEditConnectData;
+    private Parent fxmlWindowEditConnectData;
+    private AddConnectFormController addConnectFormController;
+
+    String nameWindowEditConnectData="AddConnectDataForm.fxml";
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.resourceBundle = resourceBundle;
@@ -59,10 +77,11 @@ public class SecondaryController implements Initializable {
 
 
     //Этот метод фактически заполняет все данные в окне Подключений
-    public void showConnectedDataClientIiko(ClientIiko clientIiko) {
+    public void showConnectedDataClientIiko(ClientIiko clientIiko, Stage mainstage) {
         if (clientIiko==null){
             return;
         }
+        this.mainstage=mainstage;
         this.clientIiko = clientIiko;
         /*
         * заполняем Лэйблы данные о клиенте*/
@@ -143,6 +162,9 @@ public void actionGoToWebLink() throws URISyntaxException {
             case "btnGoToWebSite":
                 actionGoToWebLink();
                 break;
+            case "btnEdit":
+                showWindowEditConnectData();
+                break;
         }
     }
 
@@ -155,13 +177,34 @@ private boolean workComputerIsSelected(WorkComputer selectedWorkComputer){
         return  true;
 }
 
+    private Parent initFXMLLoaderWindow(String nameFXML, String pathFXML ) {
+        try {
+            fxmlLoader=new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource(nameFXML));
+            fxmlLoader.setResources(ResourceBundle.getBundle(pathFXML));
+            return fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+private void showWindowEditConnectData(){
+    fxmlWindowEditConnectData=initFXMLLoaderWindow(nameWindowEditConnectData,App.pathFXML);
+    addConnectFormController=fxmlLoader.getController();
+    addConnectFormController.setEditConnectDate(workComputersImpl,webResourceIikosImpl);
+    if(windowEditConnectData==null){
+        windowEditConnectData=new Stage();
+        windowEditConnectData.setScene(new Scene(fxmlWindowEditConnectData));
+        windowEditConnectData.setTitle(resourceBundle.getString("Edit"));
+        windowEditConnectData.setMinHeight(200);
+        windowEditConnectData.setMinWidth(200);
+        windowEditConnectData.initModality(Modality.WINDOW_MODAL);
+        windowEditConnectData.initOwner(mainstage);
+        windowEditConnectData.show();
+    }
 
 
 
-
-
-    /*   @FXML
-    private void switchToPrimary() throws IOException {
-        App.setRoot("primary");
-    }*/
+}
 }

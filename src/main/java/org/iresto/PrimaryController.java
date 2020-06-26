@@ -63,7 +63,7 @@ public class PrimaryController implements Initializable {
     private Stage windowAddOrEditClient;
 
     String nameFXMLWindowOfConnectData="secondary.fxml";
-    String pathFXML="org.iresto.bundle";
+
     String nameFXMLWindowAddOrEditClient="AddOrEditClient.fxml";
 
 
@@ -79,8 +79,6 @@ public class PrimaryController implements Initializable {
         clnStatusOfSupport.setCellValueFactory(new PropertyValueFactory<ClientIiko, String>("statusOfSupport"));
         setupClearButtonField(txtSearch);
         fillData();
-
-
     }
 
     public void setMainStage(Stage mainStage){
@@ -155,10 +153,11 @@ public class PrimaryController implements Initializable {
                 +selectedClientIiko.getAddress(), mainStage);
                 addClientFormController.setClient(selectedClientIiko);
                 windowOfConnectData=null;// обнуляем окно , оно почему то не обнуляется
+
                 break;
             case "btnAdd":
                 showWindowAddOrEditClient(resourceBundle.getString("Add"), mainStage);
-                windowOfConnectData=null;// обнуляем окно , оно почему то не обнуляется
+                windowOfConnectData=null;
                 break;
             case "btnDelete":
                 break;
@@ -184,9 +183,9 @@ public class PrimaryController implements Initializable {
     /*По нажатию кнопки Подключения вызывается инициализация хагрузки secondary.fxml  и открывается
      * окно с подключениям*/
     public void showWindowConnectData(ClientIiko selectedClientIiko) {
-        fxmlSupport =initFXMLLoaderWindow(nameFXMLWindowOfConnectData,pathFXML);
+        fxmlSupport =initFXMLLoaderWindow(nameFXMLWindowOfConnectData,App.pathFXML);
         secondaryController = fxmlLoader.getController();
-        secondaryController.showConnectedDataClientIiko((ClientIiko) tableClientBook.getSelectionModel().getSelectedItem());
+        secondaryController.showConnectedDataClientIiko((ClientIiko) tableClientBook.getSelectionModel().getSelectedItem(), windowOfConnectData);
 
        if (windowOfConnectData == null) { // условие чтобы открывалось одно второе окно
             windowOfConnectData = new Stage();
@@ -207,7 +206,7 @@ public class PrimaryController implements Initializable {
 
     public void showWindowAddOrEditClient(String titleOfWindow, Stage mainStage){
         /*т.к. окно модалити , то проверка на NULL не требуется*/
-        fxmlWindowAddOrEditClient=initFXMLLoaderWindow(nameFXMLWindowAddOrEditClient,pathFXML);
+        fxmlWindowAddOrEditClient=initFXMLLoaderWindow(nameFXMLWindowAddOrEditClient,App.pathFXML);
         addClientFormController=fxmlLoader.getController();
         if (windowOfConnectData == null) {
             windowAddOrEditClient = new Stage();
