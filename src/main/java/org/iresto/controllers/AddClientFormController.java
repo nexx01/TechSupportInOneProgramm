@@ -3,8 +3,10 @@ package org.iresto.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import org.iresto.PrimaryController;
 import org.iresto.WorkWithBD.DAO.Client_DAO;
 import org.iresto.object.AbstractClient;
@@ -66,6 +68,7 @@ public class AddClientFormController implements Initializable{
             setNewValues();
             client_dao.updateClient(client);
         }
+          actionClose(actionEvent);
         }
 /*Считываем данные с формы редактирования/добавления клиента и присваиваеим о.client*/
         private void setNewValues(){
@@ -92,6 +95,11 @@ public class AddClientFormController implements Initializable{
         return true;
       }
 
+    public void actionClose(ActionEvent actionEvent) {
+        Node source = (Node) actionEvent.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.hide();
+    }
 
 
 
