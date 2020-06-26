@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import org.iresto.WorkWithBD.ConnectorDB;
 import org.iresto.object.AbstractWorkComputer;
 import org.iresto.object.impl.WorkComputer.WorkComputer;
+import org.iresto.object.impl.clientIiko.ClientIiko;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -36,4 +37,18 @@ public class ConnectData_DAO {
  }
 return null;
     }
+
+/*    public boolean insertConnectData(ClientIiko clientIiko){
+        String INSERT_QUERY = "INSERT INTO connectdata (id_client,typePC,loginAmmyAdmin,pswAmmyAdmin,loginAnyDesk,pswAnyDesk) VALUES (?,?,?,?,?,?);";
+        try(Connection connection=ConnectorDB.getConnecton();
+        PreparedStatement preparedStatement=connection.prepareStatement(INSERT_QUERY)) {
+            preparedStatement.setInt(1,clientIiko.getClientId());
+            preparedStatement.setString(2,);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return false;
+    }*/
+
 }
