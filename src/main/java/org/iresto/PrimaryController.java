@@ -151,6 +151,7 @@ public class PrimaryController implements Initializable {
                                                   + selectedClientIiko.getBrand()+ " "
                                                   +selectedClientIiko.getLegalEntity()+" "
                 +selectedClientIiko.getAddress(), mainStage);
+                System.out.println("111111111111");
                 addClientFormController.setClient(selectedClientIiko);
                 break;
             case "btnAdd":
@@ -202,9 +203,9 @@ public class PrimaryController implements Initializable {
     }
 
     public void showWindowAddOrEditClient(String titleOfWindow, Stage mainStage){
+        /*т.к. окно модалити , то проверка на NULL не требуется*/
         fxmlWindowAddOrEditClient=initFXMLLoaderWindow(nameFXMLWindowAddOrEditClient,pathFXML);
         addClientFormController=fxmlLoader.getController();
-        if(windowAddOrEditClient==null) {
             windowAddOrEditClient = new Stage();
             windowAddOrEditClient.setScene(new Scene((fxmlWindowAddOrEditClient)));
             windowAddOrEditClient.setTitle(titleOfWindow);
@@ -213,7 +214,6 @@ public class PrimaryController implements Initializable {
             windowAddOrEditClient.initModality(Modality.WINDOW_MODAL);
             windowAddOrEditClient.initOwner(mainStage);
             windowAddOrEditClient.show();
-        }
         }
 
 
