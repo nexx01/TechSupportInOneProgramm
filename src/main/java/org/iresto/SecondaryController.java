@@ -45,7 +45,6 @@ public class SecondaryController implements Initializable {
     public TableColumn<WebResourceIiko, String> columnLoginWebResource;
     public Button btnGoToWebSite;
 
-
     private ClientIiko clientIiko;
    private ObservableList<WorkComputer> workComputersImpl=FXCollections.observableArrayList();
    private  ObservableList<WebResourceIiko> webResourceIikosImpl=FXCollections.observableArrayList();
