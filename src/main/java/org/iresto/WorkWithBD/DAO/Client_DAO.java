@@ -39,7 +39,6 @@ public class Client_DAO {
         String UPDATE_QUERY = "UPDATE clientiiko SET brand=?, legalyName=?, address=?, kindOfLicense=?, statusOfSupport=? WHERE id =?;";
         try (Connection connection = ConnectorDB.getConnecton();
              PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_QUERY)) {
-            System.out.println(clientIiko.getBrand());
             preparedStatement.setString(1, clientIiko.getBrand());
             preparedStatement.setString(2, clientIiko.getLegalEntity());
             preparedStatement.setString(3, clientIiko.getAddress());
