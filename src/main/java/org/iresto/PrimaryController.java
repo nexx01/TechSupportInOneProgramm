@@ -214,6 +214,7 @@ public class PrimaryController implements Initializable {
             windowAddOrEditClient.initModality(Modality.WINDOW_MODAL);
             windowAddOrEditClient.initOwner(mainStage);
             windowAddOrEditClient.show();
+
         }
 
 
