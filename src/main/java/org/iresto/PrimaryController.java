@@ -151,11 +151,12 @@ public class PrimaryController implements Initializable {
                                                   + selectedClientIiko.getBrand()+ " "
                                                   +selectedClientIiko.getLegalEntity()+" "
                 +selectedClientIiko.getAddress(), mainStage);
-                System.out.println("111111111111");
                 addClientFormController.setClient(selectedClientIiko);
+                windowOfConnectData=null;// обнуляем окно , оно почему то не обнуляется
                 break;
             case "btnAdd":
                 showWindowAddOrEditClient(resourceBundle.getString("Add"), mainStage);
+                windowOfConnectData=null;// обнуляем окно , оно почему то не обнуляется
                 break;
             case "btnDelete":
                 break;
@@ -206,6 +207,7 @@ public class PrimaryController implements Initializable {
         /*т.к. окно модалити , то проверка на NULL не требуется*/
         fxmlWindowAddOrEditClient=initFXMLLoaderWindow(nameFXMLWindowAddOrEditClient,pathFXML);
         addClientFormController=fxmlLoader.getController();
+        if (windowOfConnectData == null) {
             windowAddOrEditClient = new Stage();
             windowAddOrEditClient.setScene(new Scene((fxmlWindowAddOrEditClient)));
             windowAddOrEditClient.setTitle(titleOfWindow);
@@ -214,7 +216,7 @@ public class PrimaryController implements Initializable {
             windowAddOrEditClient.initModality(Modality.WINDOW_MODAL);
             windowAddOrEditClient.initOwner(mainStage);
             windowAddOrEditClient.show();
-
+        }
         }
 
 
