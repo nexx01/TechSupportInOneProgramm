@@ -3,9 +3,9 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class AbstractWebResourse {
 
-    private SimpleStringProperty nameWebResource = new SimpleStringProperty("");
-    private SimpleStringProperty webAddress = new SimpleStringProperty("");
-    private SimpleStringProperty loginWebResource = new SimpleStringProperty("");
+    private SimpleStringProperty nameWebResource ;
+    private SimpleStringProperty webAddress;
+    private SimpleStringProperty loginWebResource;
     private SimpleStringProperty webpassword = new SimpleStringProperty("");
 
 
