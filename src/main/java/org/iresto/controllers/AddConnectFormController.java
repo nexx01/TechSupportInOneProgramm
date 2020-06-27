@@ -34,7 +34,8 @@ public class AddConnectFormController implements Initializable {
     }
 
     public void setEditConnectDate(ObservableList<WorkComputer> workComputersImpl,
-                                   ObservableList<WebResourceIiko> webResourceIikosImpl ){
+                                   ObservableList<WebResourceIiko> webResourceIikosImpl,
+                                   ClientIiko clientIiko){
         if(clientIiko==null){
             return;
         }

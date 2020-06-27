@@ -186,6 +186,7 @@ public class PrimaryController implements Initializable {
         fxmlSupport =initFXMLLoaderWindow(nameFXMLWindowOfConnectData,App.pathFXML);
         secondaryController = fxmlLoader.getController();
         secondaryController.showConnectedDataClientIiko((ClientIiko) tableClientBook.getSelectionModel().getSelectedItem(), windowOfConnectData);
+        //  ссылку на окно передаем, чтобы сделать мэйнстэйдж и следующее окно будет модальным
 
        if (windowOfConnectData == null) { // условие чтобы открывалось одно второе окно
             windowOfConnectData = new Stage();

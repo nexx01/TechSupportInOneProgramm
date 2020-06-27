@@ -163,7 +163,9 @@ public void actionGoToWebLink() throws URISyntaxException {
                 actionGoToWebLink();
                 break;
             case "btnEdit":
+               // addConnectFormController.setEditConnectDate(workComputersImpl,webResourceIikosImpl);
                 showWindowEditConnectData();
+
                 break;
         }
     }
@@ -192,7 +194,7 @@ private boolean workComputerIsSelected(WorkComputer selectedWorkComputer){
 private void showWindowEditConnectData(){
     fxmlWindowEditConnectData=initFXMLLoaderWindow(nameWindowEditConnectData,App.pathFXML);
     addConnectFormController=fxmlLoader.getController();
-    addConnectFormController.setEditConnectDate(workComputersImpl,webResourceIikosImpl);
+    addConnectFormController.setEditConnectDate(workComputersImpl,webResourceIikosImpl, clientIiko);
     if(windowEditConnectData==null){
         windowEditConnectData=new Stage();
         windowEditConnectData.setScene(new Scene(fxmlWindowEditConnectData));
