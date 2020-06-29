@@ -42,8 +42,19 @@ public class ConnectData_DAO {
         return null;
     }
 
+
+    public boolean insertNewConnectData(WorkComputer workComputer,int id_client){
+        if(workComputer.getIdInBaseOfData()>0){
+                return updateConnectData(workComputer);
+        } else if (workComputer.getIdInBaseOfData()==0){
+            return insertConnectData(workComputer,id_client);
+        }else {
+            return false;
+        }
+    }
+
     /*Вставка новой строки в БД*/
-    public boolean insertConnectData(WorkComputer workComputer, int id_client) {
+    private boolean insertConnectData(WorkComputer workComputer, int id_client) {
         String INSERT_QUERY = "INSERT INTO connectdata (id_client,typePC,loginAmmyAdmin,pswAmmyAdmin,loginAnyDesk,pswAnyDesk) VALUES (?,?,?,?,?,?);";
         try (Connection connection = ConnectorDB.getConnecton();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_QUERY)) {
@@ -53,6 +64,7 @@ public class ConnectData_DAO {
             preparedStatement.setString(4, workComputer.getPswAmmyAdmin());
             preparedStatement.setString(5, workComputer.getIDAnyDesk());
             preparedStatement.setString(6, workComputer.getPswAnyDesk());
+            preparedStatement.executeQuery();
             return true;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -62,7 +74,7 @@ public class ConnectData_DAO {
 
     /*Обновление строки по ID строки в БД
      * 1. Возможно можно объединить INSERT и Update, но по моему мнению только внесет путаницу */
-    public boolean updateConnectData(WorkComputer workComputer) {
+    private boolean updateConnectData(WorkComputer workComputer) {
         String UPDATE_QUERY = "UPDATE connectdata SET typePC=?, loginAmmyAdmin=?, pswAmmyAdmin=?, loginAnyDesk=?, pswAnyDesk=? WHERE id =?;";
         try (Connection connection = ConnectorDB.getConnecton();
              PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_QUERY)) {
@@ -72,6 +84,7 @@ public class ConnectData_DAO {
             preparedStatement.setString(4, workComputer.getIDAnyDesk());
             preparedStatement.setString(5, workComputer.getPswAnyDesk());
             preparedStatement.setInt(6, workComputer.getIdInBaseOfData());
+            preparedStatement.executeUpdate();
             return true;
         } catch (SQLException throwables) {
             throwables.printStackTrace();

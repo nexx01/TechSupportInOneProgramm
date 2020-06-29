@@ -13,7 +13,7 @@
          <children>
             <TableView fx:id="tableOfConnectData" layoutX="13.0" layoutY="5.0" prefHeight="164.0" prefWidth="574.0">
               <columns>
-                <TableColumn fx:id="columnTypePC" prefWidth="75.0" text="Тип ПК" />
+                <TableColumn fx:id="columnTypePC" onEditCommit="#onEditChanged" prefWidth="75.0" text="Тип ПК" />
                 <TableColumn fx:id="columnAmmyAdmin" prefWidth="112.0" text="Ammy" />
                   <TableColumn fx:id="columnPswAmmy" prefWidth="119.0" text="PswAmmy" />
                   <TableColumn fx:id="columnAnydesk" prefWidth="124.0" text="Any" />

@@ -1,0 +1,12 @@
+/target/
+/target/
+/target/classes/
+/target/classes/org/
+/target/classes/module-info.class
+/target/generated-sources/
+/target/generated-sources/annotations/
+/target/maven-status/
+/target/maven-status/maven-compiler-plugin/
+/target/maven-status/maven-compiler-plugin/compile/
+/.idea/
+workspace.xml

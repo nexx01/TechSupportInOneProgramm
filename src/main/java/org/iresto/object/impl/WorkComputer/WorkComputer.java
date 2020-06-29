@@ -4,13 +4,16 @@ package org.iresto.object.impl.WorkComputer;
 import org.iresto.object.AbstractWorkComputer;
 
 public class WorkComputer extends AbstractWorkComputer {
+    private int idInBaseOfData; // номер строки в БД, для редактирования данных
 
     public WorkComputer(String typePC) {
         super(typePC);
     }
 
-    public WorkComputer(String typePC, String IDAmmyAdmin, String IDAnyDesk, String pswAmmyAdmin, String pswAnyDesk) {
+    public WorkComputer(String typePC, String IDAmmyAdmin, String IDAnyDesk, String pswAmmyAdmin, String pswAnyDesk,
+                        int idInBaseOfData) {
         super(typePC, IDAmmyAdmin, IDAnyDesk, pswAmmyAdmin, pswAnyDesk);
+        this.idInBaseOfData=idInBaseOfData;
     }
 
     @Override
@@ -51,6 +54,10 @@ public class WorkComputer extends AbstractWorkComputer {
     @Override
     public void setTypePC(String typePC) {
         super.setTypePC(typePC);
+    }
+
+    public int getIdInBaseOfData() {
+        return idInBaseOfData;
     }
 
     @Override

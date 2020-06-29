@@ -132,6 +132,7 @@ public void actionGoToWebLink() throws URISyntaxException {
     /*Метод определяющий на какую кнопку нажали и проводит соответствующие действия*/
     public void actionButtonPressed(ActionEvent actionEvent) throws URISyntaxException {
         Object source =actionEvent.getSource();
+        windowEditConnectData=null; //обнуляем окно чтобы вызвать повторно
 
         // если нажата не кнопка - выходим из метода
         if (!(source instanceof Button)) {
@@ -165,9 +166,11 @@ public void actionGoToWebLink() throws URISyntaxException {
             case "btnEdit":
                // addConnectFormController.setEditConnectDate(workComputersImpl,webResourceIikosImpl);
                 showWindowEditConnectData();
-
                 break;
+
         }
+        tableOfConnectData.getItems().clear();
+        showConnectedDataClientIiko(clientIiko,mainstage);
     }
 
     /*Определяем был ли выбрана хоть одна строка в таблице*/
@@ -203,10 +206,7 @@ private void showWindowEditConnectData(){
         windowEditConnectData.setMinWidth(200);
         windowEditConnectData.initModality(Modality.WINDOW_MODAL);
         windowEditConnectData.initOwner(mainstage);
-        windowEditConnectData.show();
+        windowEditConnectData.showAndWait();
     }
-
-
-
 }
 }

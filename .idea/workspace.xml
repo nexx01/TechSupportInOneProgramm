@@ -16,13 +16,18 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:EditInTable" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f990358-d0f9-4b4e-a265-007cabb77481" name="Default Changelist" comment="пофикшены некоторые ошибки">
+    <list default="true" id="4f990358-d0f9-4b4e-a265-007cabb77481" name="Default Changelist" comment="    public boolean updateConnectData&#10;    &#10;    public boolean insertConnectData">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/ConnectData_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/ConnectData_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddConnectFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddConnectFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/object/impl/WorkComputer/WorkComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/object/impl/WorkComputer/WorkComputer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/AddConnectDataForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/AddConnectDataForm.fxml" afterDir="false" />
     </list>
     <list id="b097a2bd-e837-4e29-a68b-64ebc13893a2" name="Revert &quot;in pom added dependency of mysql-connector-java &lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt; &lt;version&gt;8.0.12&lt;/version&gt; &lt;/dependency&gt;&quot;" comment="Revert &quot;in pom added dependency of mysql-connector-java   &lt;dependency&gt;             &lt;groupId&gt;mysql&lt;/groupId&gt;             &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;             &lt;version&gt;8.0.12&lt;/version&gt;         &lt;/dependency&gt;&quot;&#10;&#10;This reverts commit 06e76109" />
     <list id="bdf2d506-c732-44a6-8877-e09d94ec66d1" name="Revert &quot;test6 commit&quot;" comment="Revert &quot;test6 commit&quot;&#10;&#10;This reverts commit 0c44a83d" />
@@ -137,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593163222535</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="    public boolean updateConnectData&#10;    &#10;    public boolean insertConnectData">
+      <created>1593430045383</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1593430045383</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -185,17 +197,18 @@
     <MESSAGE value="появляется окно добавить&#10;Но при нажатии САВЭ выскакивает ошибка" />
     <MESSAGE value="Sout лишний удалил" />
     <MESSAGE value="Удалил прверку окна Редактирования на нуль.&#10;Т.к. собсвенником была мэйнстэйдж то он не обнуляется&#10;. Но т.к окно модальное то не требуется проверка на нуль.&#10;&#10;С другой стороны окно будет висеть в памяти пока существует главное окно. Но пока существует ссылка , т.е после закрытия окна редактирования окно не исчезает а зависает в памяти. до конца работы приложения или пока не создадут новое окно и не сработает сборщик" />
-    <option name="LAST_COMMIT_MESSAGE" value="Удалил прверку окна Редактирования на нуль.&#10;Т.к. собсвенником была мэйнстэйдж то он не обнуляется&#10;. Но т.к окно модальное то не требуется проверка на нуль.&#10;&#10;С другой стороны окно будет висеть в памяти пока существует главное окно. Но пока существует ссылка , т.е после закрытия окна редактирования окно не исчезает а зависает в памяти. до конца работы приложения или пока не создадут новое окно и не сработает сборщик" />
+    <MESSAGE value="    public boolean updateConnectData&#10;    &#10;    public boolean insertConnectData" />
+    <option name="LAST_COMMIT_MESSAGE" value="    public boolean updateConnectData&#10;    &#10;    public boolean insertConnectData" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592601684750">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1592601684750" />
-    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser" timestamp="1593080555519">
+    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser" timestamp="1593407555750">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1593080555519" />
+    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1593407555750" />
     <state x="466" y="263" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1592761131136">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -212,22 +225,22 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="559" y="267" key="Github.ShareDialog/0.0.1366.738@0.0.1366.738" timestamp="1592393878519" />
-    <state width="1323" height="171" key="GridCell.Tab.0.bottom" timestamp="1593162817261">
+    <state width="1323" height="103" key="GridCell.Tab.0.bottom" timestamp="1593432959173">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="171" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593162817261" />
-    <state width="1323" height="171" key="GridCell.Tab.0.center" timestamp="1593162817261">
+    <state width="1323" height="103" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593432959173" />
+    <state width="1323" height="103" key="GridCell.Tab.0.center" timestamp="1593432959172">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="171" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593162817261" />
-    <state width="1323" height="171" key="GridCell.Tab.0.left" timestamp="1593162817260">
+    <state width="1323" height="103" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593432959172" />
+    <state width="1323" height="103" key="GridCell.Tab.0.left" timestamp="1593432959172">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="171" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593162817260" />
-    <state width="1323" height="171" key="GridCell.Tab.0.right" timestamp="1593162817261">
+    <state width="1323" height="103" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593432959172" />
+    <state width="1323" height="103" key="GridCell.Tab.0.right" timestamp="1593432959173">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="171" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593162817261" />
+    <state width="1323" height="103" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593432959173" />
     <state width="1323" height="188" key="GridCell.Tab.1.bottom" timestamp="1593101600266">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -264,6 +277,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="131" y="51" key="new project wizard/0.0.1366.738@0.0.1366.738" timestamp="1592733193546" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1593430190733">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1593430190733" />
     <state x="513" y="160" key="svn.repositoryBrowser" timestamp="1592394047644">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -274,7 +291,7 @@
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/ConnectData_DAO.java</url>
-          <line>30</line>
+          <line>34</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
@@ -304,7 +321,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java</url>
-          <line>149</line>
+          <line>150</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -346,6 +363,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddClientFormController.java</url>
           <line>61</line>
           <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/ConnectData_DAO.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="114" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
