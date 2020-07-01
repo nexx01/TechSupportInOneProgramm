@@ -21,12 +21,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f990358-d0f9-4b4e-a265-007cabb77481" name="Default Changelist" comment="    public boolean updateConnectData&#10;    &#10;    public boolean insertConnectData">
+    <list default="true" id="4f990358-d0f9-4b4e-a265-007cabb77481" name="Default Changelist" comment="1/после редактирования данные пишутся в бд&#10;2) при выходе таблица очищается и заполняется из бд заново&#10;3.Это сделано пока только для одного столбца">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/ConnectData_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/ConnectData_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/WebResource_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/WebResource_DAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddConnectFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddConnectFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/object/impl/WorkComputer/WorkComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/object/impl/WorkComputer/WorkComputer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/object/impl/WorkComputer/WebResourceIiko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/object/impl/WorkComputer/WebResourceIiko.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/AddConnectDataForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/AddConnectDataForm.fxml" afterDir="false" />
     </list>
     <list id="b097a2bd-e837-4e29-a68b-64ebc13893a2" name="Revert &quot;in pom added dependency of mysql-connector-java &lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt; &lt;version&gt;8.0.12&lt;/version&gt; &lt;/dependency&gt;&quot;" comment="Revert &quot;in pom added dependency of mysql-connector-java   &lt;dependency&gt;             &lt;groupId&gt;mysql&lt;/groupId&gt;             &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;             &lt;version&gt;8.0.12&lt;/version&gt;         &lt;/dependency&gt;&quot;&#10;&#10;This reverts commit 06e76109" />
@@ -149,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593430045383</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="1/после редактирования данные пишутся в бд&#10;2) при выходе таблица очищается и заполняется из бд заново&#10;3.Это сделано пока только для одного столбца">
+      <created>1593433599896</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1593433599897</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -198,17 +204,18 @@
     <MESSAGE value="Sout лишний удалил" />
     <MESSAGE value="Удалил прверку окна Редактирования на нуль.&#10;Т.к. собсвенником была мэйнстэйдж то он не обнуляется&#10;. Но т.к окно модальное то не требуется проверка на нуль.&#10;&#10;С другой стороны окно будет висеть в памяти пока существует главное окно. Но пока существует ссылка , т.е после закрытия окна редактирования окно не исчезает а зависает в памяти. до конца работы приложения или пока не создадут новое окно и не сработает сборщик" />
     <MESSAGE value="    public boolean updateConnectData&#10;    &#10;    public boolean insertConnectData" />
-    <option name="LAST_COMMIT_MESSAGE" value="    public boolean updateConnectData&#10;    &#10;    public boolean insertConnectData" />
+    <MESSAGE value="1/после редактирования данные пишутся в бд&#10;2) при выходе таблица очищается и заполняется из бд заново&#10;3.Это сделано пока только для одного столбца" />
+    <option name="LAST_COMMIT_MESSAGE" value="1/после редактирования данные пишутся в бд&#10;2) при выходе таблица очищается и заполняется из бд заново&#10;3.Это сделано пока только для одного столбца" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592601684750">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1592601684750" />
-    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser" timestamp="1593407555750">
+    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser" timestamp="1593525927569">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1593407555750" />
+    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1593525927569" />
     <state x="466" y="263" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1592761131136">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -225,38 +232,38 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="559" y="267" key="Github.ShareDialog/0.0.1366.738@0.0.1366.738" timestamp="1592393878519" />
-    <state width="1323" height="103" key="GridCell.Tab.0.bottom" timestamp="1593432959173">
+    <state width="1323" height="2" key="GridCell.Tab.0.bottom" timestamp="1593594826842">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="103" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593432959173" />
-    <state width="1323" height="103" key="GridCell.Tab.0.center" timestamp="1593432959172">
+    <state width="1323" height="2" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593594826842" />
+    <state width="1323" height="2" key="GridCell.Tab.0.center" timestamp="1593594826842">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="103" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593432959172" />
-    <state width="1323" height="103" key="GridCell.Tab.0.left" timestamp="1593432959172">
+    <state width="1323" height="2" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593594826842" />
+    <state width="1323" height="2" key="GridCell.Tab.0.left" timestamp="1593594826841">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="103" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593432959172" />
-    <state width="1323" height="103" key="GridCell.Tab.0.right" timestamp="1593432959173">
+    <state width="1323" height="2" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593594826841" />
+    <state width="1323" height="2" key="GridCell.Tab.0.right" timestamp="1593594826842">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="103" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593432959173" />
-    <state width="1323" height="188" key="GridCell.Tab.1.bottom" timestamp="1593101600266">
+    <state width="1323" height="2" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593594826842" />
+    <state width="1323" height="2" key="GridCell.Tab.1.bottom" timestamp="1593594826844">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="188" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593101600266" />
-    <state width="1323" height="188" key="GridCell.Tab.1.center" timestamp="1593101600265">
+    <state width="1323" height="2" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593594826844" />
+    <state width="1323" height="2" key="GridCell.Tab.1.center" timestamp="1593594826843">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="188" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1593101600265" />
-    <state width="1323" height="188" key="GridCell.Tab.1.left" timestamp="1593101600265">
+    <state width="1323" height="2" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1593594826843" />
+    <state width="1323" height="2" key="GridCell.Tab.1.left" timestamp="1593594826843">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="188" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1593101600265" />
-    <state width="1323" height="188" key="GridCell.Tab.1.right" timestamp="1593101600266">
+    <state width="1323" height="2" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1593594826843" />
+    <state width="1323" height="2" key="GridCell.Tab.1.right" timestamp="1593594826843">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="188" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1593101600266" />
+    <state width="1323" height="2" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1593594826843" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1591940795975">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -296,7 +303,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/WebResource_DAO.java</url>
-          <line>28</line>
+          <line>30</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
@@ -366,8 +373,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/ConnectData_DAO.java</url>
-          <line>57</line>
+          <line>93</line>
           <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/ConnectData_DAO.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/WebResource_DAO.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="130" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

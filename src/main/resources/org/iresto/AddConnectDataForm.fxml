@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,33 +12,43 @@
    <children>
       <AnchorPane prefHeight="144.0" prefWidth="600.0">
          <children>
-            <TableView fx:id="tableOfConnectData" layoutX="13.0" layoutY="5.0" prefHeight="164.0" prefWidth="574.0">
+            <TableView fx:id="tableOfConnectData" layoutX="13.0" layoutY="5.0" prefHeight="186.0" prefWidth="574.0">
               <columns>
                 <TableColumn fx:id="columnTypePC" onEditCommit="#onEditChanged" prefWidth="75.0" text="Тип ПК" />
-                <TableColumn fx:id="columnAmmyAdmin" prefWidth="112.0" text="Ammy" />
-                  <TableColumn fx:id="columnPswAmmy" prefWidth="119.0" text="PswAmmy" />
-                  <TableColumn fx:id="columnAnydesk" prefWidth="124.0" text="Any" />
-                  <TableColumn fx:id="columnPswAnydesk" prefWidth="141.0" text="PswAny" />
+                <TableColumn fx:id="columnAmmyAdmin" onEditCommit="#onEditChanged" prefWidth="112.0" text="Ammy" />
+                  <TableColumn fx:id="columnPswAmmy" onEditCommit="#onEditChanged" prefWidth="119.0" text="PswAmmy" />
+                  <TableColumn fx:id="columnAnydesk" onEditCommit="#onEditChanged" prefWidth="124.0" text="Any" />
+                  <TableColumn fx:id="columnPswAnydesk" onEditCommit="#onEditChanged" prefWidth="141.0" text="PswAny" />
               </columns>
                <padding>
                   <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                </padding>
             </TableView>
+            <Button fx:id="btnDeleteConnectData" layoutX="78.0" layoutY="197.0" mnemonicParsing="false" onAction="#actionDeleteConnectData" text="Delete" />
+            <Button fx:id="btnAddConnectData" layoutX="14.0" layoutY="198.0" mnemonicParsing="false" onAction="#actionAddConnectData" text="Add" />
          </children>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
       </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane prefHeight="179.0" prefWidth="571.0">
          <VBox.margin>
             <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
          </VBox.margin>
          <children>
-            <TableView fx:id="tableOfWebResources" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="574.0">
+            <TableView fx:id="tableOfWebResources" layoutX="6.0" layoutY="5.0" prefHeight="136.0" prefWidth="574.0">
               <columns>
-                <TableColumn fx:id="columnNameWebResource" prefWidth="115.0" text="Web Resourse" />
-                <TableColumn fx:id="columnAdressWebResource" prefWidth="279.0" text="Address Web" />
-                  <TableColumn fx:id="columnLoginWebResource" prefWidth="179.0" text="NameLabelBackOffice" />
+                <TableColumn fx:id="columnNameWebResource" onEditCommit="#onEditCangedTebleWebResources" prefWidth="115.0" text="Web Resourse" />
+                <TableColumn fx:id="columnAdressWebResource" onEditCommit="#onEditCangedTebleWebResources" prefWidth="279.0" text="Address Web" />
+                  <TableColumn fx:id="columnLoginWebResource" onEditCommit="#onEditCangedTebleWebResources" prefWidth="179.0" text="LoginWebResource" />
               </columns>
             </TableView>
+            <Button fx:id="btnDeleteWebResource" layoutX="71.0" layoutY="147.0" mnemonicParsing="false" onAction="#actionDeleteWebResource" text="Delete" />
+            <Button fx:id="btnAddWebResource" layoutX="14.0" layoutY="147.0" mnemonicParsing="false" onAction="#actionWebResource" text="Add" />
          </children>
+         <padding>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </padding>
       </AnchorPane>
    </children>
 </VBox>
