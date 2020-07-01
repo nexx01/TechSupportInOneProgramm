@@ -92,4 +92,17 @@ public class ConnectData_DAO {
         return false;
     }
 
+    public boolean deleteConnectData(WorkComputer workComputer){
+        String DELETE_QUERY="DELETE FROM WHERE id=?";
+        try(Connection connection=ConnectorDB.getConnecton();
+        PreparedStatement preparedStatement=connection.prepareStatement(DELETE_QUERY)) {
+            preparedStatement.setInt(1, workComputer.getIdInBaseOfData());
+            preparedStatement.execute();
+            return true;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return false;
+    }
+
 }

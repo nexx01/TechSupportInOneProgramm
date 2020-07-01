@@ -44,7 +44,7 @@
               </columns>
             </TableView>
             <Button fx:id="btnDeleteWebResource" layoutX="71.0" layoutY="147.0" mnemonicParsing="false" onAction="#actionDeleteWebResource" text="Delete" />
-            <Button fx:id="btnAddWebResource" layoutX="14.0" layoutY="147.0" mnemonicParsing="false" onAction="#actionWebResource" text="Add" />
+            <Button fx:id="btnAddWebResource" layoutX="14.0" layoutY="147.0" mnemonicParsing="false" onAction="#actionAddWebResource" text="Add" />
          </children>
          <padding>
             <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />

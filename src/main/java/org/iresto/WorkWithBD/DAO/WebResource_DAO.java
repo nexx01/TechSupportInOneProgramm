@@ -84,6 +84,17 @@ return null;
         return false;
     }
 
-
+    public boolean deleteWebResourceIiko(WebResourceIiko webResourceIiko){
+        String DELETE_QUERY="DELETE FROM webresources WHERE id = ?;";
+        try(Connection connection=ConnectorDB.getConnecton();
+        PreparedStatement preparedStatement=connection.prepareStatement(DELETE_QUERY)) {
+            preparedStatement.setInt(1,webResourceIiko.getIdInDataBase());
+            preparedStatement.execute();
+            return true;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return false;
+    }
 
 }

@@ -2,6 +2,7 @@ package org.iresto.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -32,7 +33,7 @@ public class AddConnectFormController implements Initializable {
     private ObservableList<WorkComputer> workComputersImpl;
     private ObservableList<WebResourceIiko> webResourceIikosImpl;
     private ConnectData_DAO connectData_dao= new ConnectData_DAO();
-    private WebResource_DAO webResource_dao;
+    private WebResource_DAO webResource_dao=new WebResource_DAO();
 
 
     @Override
@@ -126,7 +127,28 @@ public class AddConnectFormController implements Initializable {
                 webResourceIiko.setLoginWebResource((String) cellEditEvent.getNewValue());
                 break;
         }
-        webResource_dao=new WebResource_DAO();
+
         webResource_dao.insertNewConnectData(webResourceIiko,clientIiko.getClientId());
         }
+
+    public void actionDeleteWebResource(ActionEvent actionEvent) {
+        WebResourceIiko webResourceIiko=(WebResourceIiko) tableOfWebResources.getSelectionModel().getSelectedItem();
+        webResource_dao.deleteWebResourceIiko(webResourceIiko);
+        webResourceIikosImpl.remove(webResourceIiko);
+
+        //setEditConnectDate(workComputersImpl,webResourceIikosImpl,clientIiko);
+
+    }
+
+    public void actionAddWebResource(ActionEvent actionEvent) {
+    }
+
+    public void actionAddConnectData(ActionEvent actionEvent) {
+    }
+
+    public void actionDeleteConnectData(ActionEvent actionEvent) {
+        WorkComputer workComputer=(WorkComputer) tableOfWebResources.getSelectionModel().getSelectedItem();
+        connectData_dao.deleteConnectData(workComputer);
+        workComputersImpl.remove(workComputer);
+    }
 }
