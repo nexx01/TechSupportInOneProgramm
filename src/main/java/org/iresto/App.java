@@ -14,7 +14,7 @@ import java.io.IOException;
 public class App extends Application {
 
     private  Scene scene;
-    private  FXMLLoader  fxmlLoader;
+    private  FXMLLoader  fxmlPrimary;
     public static String pathFXML="org.iresto.bundle";
 
 
@@ -27,13 +27,14 @@ public class App extends Application {
         Parent fxmlPrimary=fxmlLoader.load();*/
 
         InitFXMLLoaderWindow initFXMLLoaderWindow =new InitFXMLLoaderWindow();
-        Parent fxmlPrimary =initFXMLLoaderWindow.getFXMLLoader("/primary", pathFXML);
+        fxmlPrimary =initFXMLLoaderWindow.getFXMLLoader("/primary", pathFXML);
+        //initFXMLLoaderWindow.getFXMLLoader("/primary", pathFXML);
+        /*PrimaryController primaryController=fxmlPrimary.getController();
+        primaryController.setMainStage(primarystage);*/
 
-        PrimaryController primaryController=fxmlLoader.getController();
-        primaryController.setMainStage(primarystage);
 
-        scene = new Scene(fxmlPrimary);
-        scene.setRoot(fxmlPrimary);
+        scene = new Scene(fxmlPrimary.load());
+        //scene.setRoot(fxmlPrimary.load());
         primarystage.setScene(scene);
         primarystage.show();
     }

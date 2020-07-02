@@ -11,11 +11,13 @@ import java.util.ResourceBundle;
 
 public class InitFXMLLoaderWindow {
     private FXMLLoader fxmlLoader;
- public Parent getFXMLLoader(String nameFXML, String pathBundle) throws IOException {
+ public FXMLLoader getFXMLLoader(String nameFXML, String pathBundle) throws IOException {
      fxmlLoader = new FXMLLoader();
-     URL xmurl=getClass().getResource((nameFXML+".fxml"));
+     URL xmurl=getClass().getResource("/org/iresto/primary.fxml");
      fxmlLoader.setLocation(xmurl);
      fxmlLoader.setResources(ResourceBundle.getBundle(pathBundle));
-     return fxmlLoader.load();
+     return fxmlLoader;
  }
+
+
 }
