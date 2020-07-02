@@ -25,7 +25,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.iresto.WorkWithBD.DAO.ConnectData_DAO;
 import org.iresto.WorkWithBD.DAO.WebResource_DAO;
-import org.iresto.controllers.AddConnectFormController;
+import org.iresto.controllers.EditConnectFormController;
 import org.iresto.impl.GetConnect;
 import org.iresto.object.impl.WorkComputer.WebResourceIiko;
 import org.iresto.object.impl.WorkComputer.WorkComputer;
@@ -65,9 +65,9 @@ public class SecondaryController implements Initializable {
     private Stage mainstage;
     private Stage windowEditConnectData;
     private Parent fxmlWindowEditConnectData;
-    private AddConnectFormController addConnectFormController;
+    private EditConnectFormController editConnectFormController;
 
-    String nameWindowEditConnectData="AddConnectDataForm.fxml";
+    String nameWindowEditConnectData="EditConnectDataForm.fxml";
 
 
     @Override
@@ -196,8 +196,8 @@ private boolean workComputerIsSelected(WorkComputer selectedWorkComputer){
 
 private void showWindowEditConnectData(){
     fxmlWindowEditConnectData=initFXMLLoaderWindow(nameWindowEditConnectData,App.pathFXML);
-    addConnectFormController=fxmlLoader.getController();
-    addConnectFormController.setEditConnectDate(workComputersImpl,webResourceIikosImpl, clientIiko);
+    editConnectFormController =fxmlLoader.getController();
+    editConnectFormController.setEditConnectDate(workComputersImpl,webResourceIikosImpl, clientIiko);
     if(windowEditConnectData==null){
         windowEditConnectData=new Stage();
         windowEditConnectData.setScene(new Scene(fxmlWindowEditConnectData));

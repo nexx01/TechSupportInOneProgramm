@@ -26,8 +26,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="784a1f47-9b84-4093-9d0b-6984d5f06049" name="Default Changelist" comment="Теперь можно удалять из Таблицы Редактирования Коннект Дата">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/AddConnectForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddConnectFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddConnectFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddConnectFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/EditConnectFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/AddConnectDataForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/EditConnectDataForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/bundle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/bundle.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +50,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="TestOptimizedFXMLloader" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -126,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593101220169</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="сделал отдельный класс для InitFXMLLoaderWindow&#10;но в таком случае ни в какую не видит файл FXML">
+      <created>1593699984660</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1593699984660</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,7 +183,8 @@
     <MESSAGE value="Приложение перестроено для &#10;откна редактирования Данных о клиенте" />
     <MESSAGE value="Fixed error with pressed buttom EDIT&#10;No fixed error with press buttom ADD" />
     <MESSAGE value="появляется окно добавить&#10;Но при нажатии САВЭ выскакивает ошибка" />
-    <option name="LAST_COMMIT_MESSAGE" value="появляется окно добавить&#10;Но при нажатии САВЭ выскакивает ошибка" />
+    <MESSAGE value="сделал отдельный класс для InitFXMLLoaderWindow&#10;но в таком случае ни в какую не видит файл FXML" />
+    <option name="LAST_COMMIT_MESSAGE" value="сделал отдельный класс для InitFXMLLoaderWindow&#10;но в таком случае ни в какую не видит файл FXML" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592601684750">
@@ -187,6 +199,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="466" y="263" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.738@0.0.1366.738" timestamp="1592761131136" />
+    <state x="157" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593700059061">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="157" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738@0.0.1366.738" timestamp="1593700059061" />
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591468037253">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -199,38 +215,38 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="559" y="267" key="Github.ShareDialog/0.0.1366.738@0.0.1366.738" timestamp="1592393878519" />
-    <state width="1323" height="202" key="GridCell.Tab.0.bottom" timestamp="1593107668671">
+    <state width="1323" height="105" key="GridCell.Tab.0.bottom" timestamp="1593705300595">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="202" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593107668671" />
-    <state width="1323" height="202" key="GridCell.Tab.0.center" timestamp="1593107668670">
+    <state width="1323" height="105" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593705300595" />
+    <state width="1323" height="105" key="GridCell.Tab.0.center" timestamp="1593705300595">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="202" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593107668670" />
-    <state width="1323" height="202" key="GridCell.Tab.0.left" timestamp="1593107668670">
+    <state width="1323" height="105" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593705300595" />
+    <state width="1323" height="105" key="GridCell.Tab.0.left" timestamp="1593705300594">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="202" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593107668670" />
-    <state width="1323" height="202" key="GridCell.Tab.0.right" timestamp="1593107668670">
+    <state width="1323" height="105" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593705300594" />
+    <state width="1323" height="105" key="GridCell.Tab.0.right" timestamp="1593705300595">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="202" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593107668670" />
-    <state width="1323" height="188" key="GridCell.Tab.1.bottom" timestamp="1593101600266">
+    <state width="1323" height="105" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593705300595" />
+    <state width="661" height="230" key="GridCell.Tab.1.bottom" timestamp="1593700935635">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="188" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593101600266" />
-    <state width="1323" height="188" key="GridCell.Tab.1.center" timestamp="1593101600265">
+    <state width="661" height="230" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593700935635" />
+    <state width="661" height="230" key="GridCell.Tab.1.center" timestamp="1593700935635">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="188" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1593101600265" />
-    <state width="1323" height="188" key="GridCell.Tab.1.left" timestamp="1593101600265">
+    <state width="661" height="230" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1593700935635" />
+    <state width="661" height="230" key="GridCell.Tab.1.left" timestamp="1593700935635">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="188" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1593101600265" />
-    <state width="1323" height="188" key="GridCell.Tab.1.right" timestamp="1593101600266">
+    <state width="661" height="230" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1593700935635" />
+    <state width="661" height="230" key="GridCell.Tab.1.right" timestamp="1593700935635">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="188" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1593101600266" />
+    <state width="661" height="230" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1593700935635" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1591940795975">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -255,6 +271,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="513" y="160" key="svn.repositoryBrowser/0.0.1366.738@0.0.1366.738" timestamp="1592394047644" />
+    <state x="405" y="271" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1593700063689">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="405" y="271" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1366.738@0.0.1366.738" timestamp="1593700063689" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -3,23 +3,32 @@ package org.iresto.controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.stage.Stage;
+import org.iresto.App;
 import org.iresto.WorkWithBD.DAO.ConnectData_DAO;
 import org.iresto.WorkWithBD.DAO.WebResource_DAO;
 import org.iresto.object.impl.WorkComputer.WebResourceIiko;
 import org.iresto.object.impl.WorkComputer.WorkComputer;
 import org.iresto.object.impl.clientIiko.ClientIiko;
 
+
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AddConnectFormController implements Initializable {
+
+
+public class EditConnectFormController implements Initializable {
     public TableColumn columnTypePC;
     public TableColumn columnAmmyAdmin;
     public TableColumn columnAnydesk;
@@ -40,6 +49,8 @@ public class AddConnectFormController implements Initializable {
     private ConnectData_DAO connectData_dao= new ConnectData_DAO();
     private WebResource_DAO webResource_dao=new WebResource_DAO();
 
+    private Stage windowAddConnectData;
+    public FXMLLoader fxmlLoader;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -149,11 +160,27 @@ public class AddConnectFormController implements Initializable {
     }
 
     public void actionAddConnectData(ActionEvent actionEvent) {
+        showWindowAddConnectData();
     }
 
     public void actionDeleteConnectData(ActionEvent actionEvent) {
         WorkComputer workComputer=(WorkComputer) tableOfWebResources.getSelectionModel().getSelectedItem();
         connectData_dao.deleteConnectData(workComputer);
         workComputersImpl.remove(workComputer);
+    }
+
+    private void showWindowAddConnectData(){
+         fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/org/iresto/AddConnectForm.fxml"));
+        fxmlLoader.setResources(ResourceBundle.getBundle(App.pathFXML));
+        windowAddConnectData =new Stage();
+        try {
+            windowAddConnectData.setScene(new Scene(fxmlLoader.load()));
+            windowAddConnectData.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 }
