@@ -12,6 +12,10 @@ public class WebResourceIiko extends AbstractWebResourse{
         this.idInDataBase=idInDataBase;
     }
 
+    public WebResourceIiko(String nameWebResource, String webAddress, String loginWebResource) {
+        super(nameWebResource, webAddress, loginWebResource);
+    }
+
     public int getIdInDataBase() {
         return idInDataBase;
     }

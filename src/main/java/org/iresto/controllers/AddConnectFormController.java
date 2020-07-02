@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -29,6 +30,10 @@ public class AddConnectFormController implements Initializable {
     public TableColumn columnPswAmmy;
     public TableView tableOfConnectData;
     public TableView tableOfWebResources;
+    public Button btnDeleteWebResource;
+    public Button btnAddWebResource;
+    public Button btnDeleteConnectData;
+    public Button btnAddConnectData;
     private ClientIiko clientIiko;
     private ObservableList<WorkComputer> workComputersImpl;
     private ObservableList<WebResourceIiko> webResourceIikosImpl;
