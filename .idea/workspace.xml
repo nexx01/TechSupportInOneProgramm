@@ -26,10 +26,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="784a1f47-9b84-4093-9d0b-6984d5f06049" name="Default Changelist" comment="Теперь можно удалять из Таблицы Редактирования Коннект Дата">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iresto/utils/InitFXMLLoaderWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/InitFXMLLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/utils/InitFXMLLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/EditConnectFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/EditConnectFormController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,10 +50,13 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="FormAddConnectData" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="onto" value="0ab30b1c7693d84f1f70c8085a9d2ca9a86c988f" />
   </component>
   <component name="ProjectId" id="1dAtrRTOcfI7ISh5Q9U9AUmUPqE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -204,38 +209,38 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="559" y="267" key="Github.ShareDialog/0.0.1366.738@0.0.1366.738" timestamp="1592393878519" />
-    <state width="1323" height="191" key="GridCell.Tab.0.bottom" timestamp="1593699484283">
+    <state width="1323" height="89" key="GridCell.Tab.0.bottom" timestamp="1593716258219">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="191" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593699484283" />
-    <state width="1323" height="191" key="GridCell.Tab.0.center" timestamp="1593699484283">
+    <state width="1323" height="89" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593716258219" />
+    <state width="1323" height="89" key="GridCell.Tab.0.center" timestamp="1593716258218">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="191" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593699484283" />
-    <state width="1323" height="191" key="GridCell.Tab.0.left" timestamp="1593699484283">
+    <state width="1323" height="89" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593716258218" />
+    <state width="1323" height="89" key="GridCell.Tab.0.left" timestamp="1593716258217">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="191" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593699484283" />
-    <state width="1323" height="191" key="GridCell.Tab.0.right" timestamp="1593699484283">
+    <state width="1323" height="89" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593716258217" />
+    <state width="1323" height="89" key="GridCell.Tab.0.right" timestamp="1593716258218">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="191" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593699484283" />
-    <state width="1323" height="191" key="GridCell.Tab.1.bottom" timestamp="1593699484284">
+    <state width="1323" height="89" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593716258218" />
+    <state width="1323" height="230" key="GridCell.Tab.1.bottom" timestamp="1593715972000">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="191" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593699484284" />
-    <state width="1323" height="191" key="GridCell.Tab.1.center" timestamp="1593699484284">
+    <state width="1323" height="230" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593715972000" />
+    <state width="1323" height="230" key="GridCell.Tab.1.center" timestamp="1593715971997">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="191" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1593699484284" />
-    <state width="1323" height="191" key="GridCell.Tab.1.left" timestamp="1593699484284">
+    <state width="1323" height="230" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1593715971997" />
+    <state width="1323" height="230" key="GridCell.Tab.1.left" timestamp="1593715971997">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="191" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1593699484284" />
-    <state width="1323" height="191" key="GridCell.Tab.1.right" timestamp="1593699484284">
+    <state width="1323" height="230" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1593715971997" />
+    <state width="1323" height="230" key="GridCell.Tab.1.right" timestamp="1593715971997">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="191" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1593699484284" />
+    <state width="1323" height="230" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1593715971997" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1591940795975">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -280,27 +285,27 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java</url>
-          <line>84</line>
+          <line>85</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java</url>
-          <line>73</line>
+          <line>74</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java</url>
-          <line>167</line>
+          <line>168</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java</url>
-          <line>196</line>
+          <line>203</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java</url>
-          <line>149</line>
+          <line>150</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -352,6 +357,31 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/utils/InitFXMLLoaderWindow.java</url>
           <line>16</line>
           <option name="timeStamp" value="140" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/EditConnectFormController.java</url>
+          <line>179</line>
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/EditConnectFormController.java</url>
+          <line>178</line>
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/EditConnectFormController.java</url>
+          <line>183</line>
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/EditConnectFormController.java</url>
+          <line>184</line>
+          <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/EditConnectFormController.java</url>
+          <line>186</line>
+          <option name="timeStamp" value="152" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

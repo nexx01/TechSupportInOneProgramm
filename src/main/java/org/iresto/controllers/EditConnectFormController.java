@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -19,12 +20,13 @@ import org.iresto.WorkWithBD.DAO.WebResource_DAO;
 import org.iresto.object.impl.WorkComputer.WebResourceIiko;
 import org.iresto.object.impl.WorkComputer.WorkComputer;
 import org.iresto.object.impl.clientIiko.ClientIiko;
-
+import org.iresto.utils.InitFXMLLoader;
 
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 
 
 
@@ -51,6 +53,8 @@ public class EditConnectFormController implements Initializable {
 
     private Stage windowAddConnectData;
     public FXMLLoader fxmlLoader;
+    private String nameFXMLAddConnectForm="/org/iresto/AddConnectForm.fxml";
+    private Parent fxmlWindowAddConnectForm;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -170,16 +174,20 @@ public class EditConnectFormController implements Initializable {
     }
 
     private void showWindowAddConnectData(){
-         fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/org/iresto/AddConnectForm.fxml"));
-        fxmlLoader.setResources(ResourceBundle.getBundle(App.pathFXML));
-        windowAddConnectData =new Stage();
+        InitFXMLLoader initFXMLLoader=new InitFXMLLoader();
         try {
-            windowAddConnectData.setScene(new Scene(fxmlLoader.load()));
-            windowAddConnectData.show();
+            fxmlLoader=initFXMLLoader.getFXMLLoader(nameFXMLAddConnectForm);
+            fxmlWindowAddConnectForm=fxmlLoader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource(nameFXMLAddConnectForm));
+        //fxmlLoader.setResources(ResourceBundle.getBundle(App.pathFXML));
+        windowAddConnectData =new Stage();
+
+            windowAddConnectData.setScene(new Scene(fxmlWindowAddConnectForm));
+            windowAddConnectData.show();
 
 
     }

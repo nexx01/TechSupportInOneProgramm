@@ -30,6 +30,7 @@ import org.iresto.impl.GetConnect;
 import org.iresto.object.impl.WorkComputer.WebResourceIiko;
 import org.iresto.object.impl.WorkComputer.WorkComputer;
 import org.iresto.object.impl.clientIiko.ClientIiko;
+import org.iresto.utils.InitFXMLLoader;
 
 
 public class SecondaryController implements Initializable {
@@ -67,7 +68,7 @@ public class SecondaryController implements Initializable {
     private Parent fxmlWindowEditConnectData;
     private EditConnectFormController editConnectFormController;
 
-    String nameWindowEditConnectData="EditConnectDataForm.fxml";
+    String nameWindowEditConnectData="/org/iresto/EditConnectDataForm.fxml";
 
 
     @Override
@@ -182,7 +183,7 @@ private boolean workComputerIsSelected(WorkComputer selectedWorkComputer){
         return  true;
 }
 
-    private Parent initFXMLLoaderWindow(String nameFXML, String pathFXML ) {
+/*    private Parent initFXMLLoaderWindow(String nameFXML, String pathFXML ) {
         try {
             fxmlLoader=new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource(nameFXML));
@@ -192,10 +193,17 @@ private boolean workComputerIsSelected(WorkComputer selectedWorkComputer){
             e.printStackTrace();
         }
         return null;
-    }
+    }*/
 
 private void showWindowEditConnectData(){
-    fxmlWindowEditConnectData=initFXMLLoaderWindow(nameWindowEditConnectData,App.pathFXML);
+    //fxmlWindowEditConnectData=initFXMLLoaderWindow(nameWindowEditConnectData,App.pathFXML);
+    InitFXMLLoader initFXMLLoader=new InitFXMLLoader();
+    try {
+        fxmlLoader = initFXMLLoader.getFXMLLoader(nameWindowEditConnectData);
+        fxmlWindowEditConnectData = fxmlLoader.load();
+    } catch(IOException e){
+        e.printStackTrace();
+    }
     editConnectFormController =fxmlLoader.getController();
     editConnectFormController.setEditConnectDate(workComputersImpl,webResourceIikosImpl, clientIiko);
     if(windowEditConnectData==null){
@@ -206,7 +214,7 @@ private void showWindowEditConnectData(){
         windowEditConnectData.setMinWidth(200);
         windowEditConnectData.initModality(Modality.WINDOW_MODAL);
         windowEditConnectData.initOwner(mainstage);
-        windowEditConnectData.showAndWait();
+        windowEditConnectData.show();
     }
 }
 }

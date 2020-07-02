@@ -24,6 +24,7 @@ import org.iresto.controllers.AddClientFormController;
 import org.iresto.object.AbstractClientIIKO;
 import org.iresto.object.impl.clientIiko.ClientIiko;
 import org.iresto.utils.DialogManager;
+import org.iresto.utils.InitFXMLLoader;
 
 public class PrimaryController implements Initializable {
 
@@ -62,9 +63,9 @@ public class PrimaryController implements Initializable {
     private Stage windowOfConnectData;
     private Stage windowAddOrEditClient;
 
-    String nameFXMLWindowOfConnectData="secondary.fxml";
+    String nameFXMLWindowOfConnectData="/org/iresto/secondary.fxml";
 
-    String nameFXMLWindowAddOrEditClient="AddOrEditClient.fxml";
+    String nameFXMLWindowAddOrEditClient="/org/iresto/AddOrEditClient.fxml";
 
 
 
@@ -166,7 +167,7 @@ public class PrimaryController implements Initializable {
     }
 
 
-    /*Инициализатор fxml Универсальный*/
+/*    *//*Инициализатор fxml Универсальный*//*
     private Parent initFXMLLoaderWindow(String nameFXML, String pathFXML ) {
         try {
             fxmlLoader=new FXMLLoader();
@@ -177,37 +178,50 @@ public class PrimaryController implements Initializable {
             e.printStackTrace();
         }
         return null;
-    }
+    }*/
 
 
     /*По нажатию кнопки Подключения вызывается инициализация хагрузки secondary.fxml  и открывается
      * окно с подключениям*/
     public void showWindowConnectData(ClientIiko selectedClientIiko) {
-        fxmlSupport =initFXMLLoaderWindow(nameFXMLWindowOfConnectData,App.pathFXML);
-        secondaryController = fxmlLoader.getController();
-        secondaryController.showConnectedDataClientIiko((ClientIiko) tableClientBook.getSelectionModel().getSelectedItem(), windowOfConnectData);
-        //  ссылку на окно передаем, чтобы сделать мэйнстэйдж и следующее окно будет модальным
+        InitFXMLLoader initFXMLLoader=new InitFXMLLoader();
+            try {
+                fxmlLoader = initFXMLLoader.getFXMLLoader(nameFXMLWindowOfConnectData);
+                fxmlSupport = fxmlLoader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            secondaryController = fxmlLoader.getController();
+            secondaryController.showConnectedDataClientIiko((ClientIiko) tableClientBook.getSelectionModel().getSelectedItem(), windowOfConnectData);
+            //  ссылку на окно передаем, чтобы сделать мэйнстэйдж и следующее окно будет модальным
 
-       if (windowOfConnectData == null) { // условие чтобы открывалось одно второе окно
-            windowOfConnectData = new Stage();
-            windowOfConnectData.setScene(new Scene(fxmlSupport));
-            String titleOfWindow=
-                    selectedClientIiko.getBrand()+" " +selectedClientIiko.getLegalEntity()
-                            +" "+selectedClientIiko.getAddress();
-            windowOfConnectData.setTitle(titleOfWindow);
-            windowOfConnectData.setMinHeight(200);
-            windowOfConnectData.setMinWidth(300);
-            windowOfConnectData.initModality(Modality.WINDOW_MODAL);
-            // windowOfConnectData.initOwner();
+            if (windowOfConnectData == null) { // условие чтобы открывалось одно второе окно
+                windowOfConnectData = new Stage();
+                windowOfConnectData.setScene(new Scene(fxmlSupport));
+                String titleOfWindow =
+                        selectedClientIiko.getBrand() + " " + selectedClientIiko.getLegalEntity()
+                                + " " + selectedClientIiko.getAddress();
+                windowOfConnectData.setTitle(titleOfWindow);
+                windowOfConnectData.setMinHeight(200);
+                windowOfConnectData.setMinWidth(300);
+                windowOfConnectData.initModality(Modality.WINDOW_MODAL);
+                // windowOfConnectData.initOwner();
 
+            }
+            windowOfConnectData.show();
         }
-        windowOfConnectData.show();
 
-    }
 
     public void showWindowAddOrEditClient(String titleOfWindow, Stage mainStage){
+        InitFXMLLoader initFXMLLoader= new InitFXMLLoader();
+        try {
+            fxmlLoader = initFXMLLoader.getFXMLLoader(nameFXMLWindowAddOrEditClient);
+            fxmlWindowAddOrEditClient = fxmlLoader.load();
+        } catch(IOException e){
+            e.printStackTrace();
+        }
         /*т.к. окно модалити , то проверка на NULL не требуется*/
-        fxmlWindowAddOrEditClient=initFXMLLoaderWindow(nameFXMLWindowAddOrEditClient,App.pathFXML);
+        //fxmlWindowAddOrEditClient=initFXMLLoaderWindow(nameFXMLWindowAddOrEditClient);
         addClientFormController=fxmlLoader.getController();
         if (windowOfConnectData == null) {
             windowAddOrEditClient = new Stage();
