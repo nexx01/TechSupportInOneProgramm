@@ -26,8 +26,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="784a1f47-9b84-4093-9d0b-6984d5f06049" name="Default Changelist" comment="Теперь можно удалять из Таблицы Редактирования Коннект Дата">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/iresto/utils/InitFXMLLoaderWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddConnectFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddConnectFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +91,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
+        <item itemvalue="Application.App" />
+        <item itemvalue="Application.App" />
         <item itemvalue="Application.App" />
         <item itemvalue="Application.App" />
       </list>
@@ -199,38 +204,38 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="559" y="267" key="Github.ShareDialog/0.0.1366.738@0.0.1366.738" timestamp="1592393878519" />
-    <state width="1323" height="202" key="GridCell.Tab.0.bottom" timestamp="1593107668671">
+    <state width="1323" height="191" key="GridCell.Tab.0.bottom" timestamp="1593699484283">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="202" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593107668671" />
-    <state width="1323" height="202" key="GridCell.Tab.0.center" timestamp="1593107668670">
+    <state width="1323" height="191" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593699484283" />
+    <state width="1323" height="191" key="GridCell.Tab.0.center" timestamp="1593699484283">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="202" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593107668670" />
-    <state width="1323" height="202" key="GridCell.Tab.0.left" timestamp="1593107668670">
+    <state width="1323" height="191" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593699484283" />
+    <state width="1323" height="191" key="GridCell.Tab.0.left" timestamp="1593699484283">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="202" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593107668670" />
-    <state width="1323" height="202" key="GridCell.Tab.0.right" timestamp="1593107668670">
+    <state width="1323" height="191" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593699484283" />
+    <state width="1323" height="191" key="GridCell.Tab.0.right" timestamp="1593699484283">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="202" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593107668670" />
-    <state width="1323" height="188" key="GridCell.Tab.1.bottom" timestamp="1593101600266">
+    <state width="1323" height="191" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593699484283" />
+    <state width="1323" height="191" key="GridCell.Tab.1.bottom" timestamp="1593699484284">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="188" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593101600266" />
-    <state width="1323" height="188" key="GridCell.Tab.1.center" timestamp="1593101600265">
+    <state width="1323" height="191" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593699484284" />
+    <state width="1323" height="191" key="GridCell.Tab.1.center" timestamp="1593699484284">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="188" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1593101600265" />
-    <state width="1323" height="188" key="GridCell.Tab.1.left" timestamp="1593101600265">
+    <state width="1323" height="191" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1593699484284" />
+    <state width="1323" height="191" key="GridCell.Tab.1.left" timestamp="1593699484284">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="188" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1593101600265" />
-    <state width="1323" height="188" key="GridCell.Tab.1.right" timestamp="1593101600266">
+    <state width="1323" height="191" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1593699484284" />
+    <state width="1323" height="191" key="GridCell.Tab.1.right" timestamp="1593699484284">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="188" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1593101600266" />
+    <state width="1323" height="191" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1593699484284" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1591940795975">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -251,6 +256,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="131" y="51" key="new project wizard/0.0.1366.738@0.0.1366.738" timestamp="1592733193546" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1593699537528">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1593699537528" />
     <state x="513" y="160" key="svn.repositoryBrowser" timestamp="1592394047644">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -333,6 +342,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddClientFormController.java</url>
           <line>61</line>
           <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/utils/InitFXMLLoaderWindow.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/utils/InitFXMLLoaderWindow.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="140" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
