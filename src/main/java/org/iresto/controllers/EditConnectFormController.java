@@ -13,6 +13,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.iresto.App;
 import org.iresto.WorkWithBD.DAO.ConnectData_DAO;
@@ -26,8 +27,6 @@ import org.iresto.utils.InitFXMLLoader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-
 
 
 public class EditConnectFormController implements Initializable {
@@ -48,13 +47,17 @@ public class EditConnectFormController implements Initializable {
     private ClientIiko clientIiko;
     private ObservableList<WorkComputer> workComputersImpl;
     private ObservableList<WebResourceIiko> webResourceIikosImpl;
-    private ConnectData_DAO connectData_dao= new ConnectData_DAO();
-    private WebResource_DAO webResource_dao=new WebResource_DAO();
+    private ConnectData_DAO connectData_dao = new ConnectData_DAO();
+    private WebResource_DAO webResource_dao = new WebResource_DAO();
 
     private Stage windowAddConnectData;
+    private Stage windowAddWebResourceForm;
+
     public FXMLLoader fxmlLoader;
-    private String nameFXMLAddConnectForm="/org/iresto/AddConnectForm.fxml";
+    private String nameFXMLAddConnectForm = "/org/iresto/AddConnectForm.fxml";
     private Parent fxmlWindowAddConnectForm;
+    private String nameFXMLAddWebResource = "/org/iresto/AddWebResourceForm.fxml";
+    private Parent fxmlWindowAddWebResourceForm;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -68,8 +71,8 @@ public class EditConnectFormController implements Initializable {
             return;
         }
         this.clientIiko = clientIiko;
-        this.workComputersImpl=workComputersImpl;
-        this.webResourceIikosImpl=webResourceIikosImpl;
+        this.workComputersImpl = workComputersImpl;
+        this.webResourceIikosImpl = webResourceIikosImpl;
 
         columnTypePC.setCellValueFactory(new PropertyValueFactory<>("typePC"));
         columnAmmyAdmin.setCellValueFactory(new PropertyValueFactory<>("IDAmmyAdmin"));
@@ -84,7 +87,6 @@ public class EditConnectFormController implements Initializable {
         columnPswAmmy.setCellFactory(TextFieldTableCell.forTableColumn());
         columnAnydesk.setCellFactory(TextFieldTableCell.forTableColumn());
         columnPswAnydesk.setCellFactory(TextFieldTableCell.forTableColumn());
-
 
 
         columnNameWebResource.setCellValueFactory(new PropertyValueFactory<>("nameWebResource"));
@@ -109,10 +111,10 @@ public class EditConnectFormController implements Initializable {
 
     public void onEditChanged(TableColumn.CellEditEvent cellEditEvent) {
         WorkComputer workComputer = (WorkComputer) tableOfConnectData.getSelectionModel().getSelectedItem();
-        switch (cellEditEvent.getTableColumn().getId()){
+        switch (cellEditEvent.getTableColumn().getId()) {
             case "columnTypePC":
-                    workComputer.setTypePC((String) cellEditEvent.getNewValue());
-                    break;
+                workComputer.setTypePC((String) cellEditEvent.getNewValue());
+                break;
             case "columnAmmyAdmin":
                 workComputer.setIDAmmyAdmin((String) cellEditEvent.getNewValue());
                 break;
@@ -127,15 +129,15 @@ public class EditConnectFormController implements Initializable {
                 break;
 
         }
-        connectData_dao.insertNewConnectData(workComputer,clientIiko.getClientId());
+        connectData_dao.insertNewConnectData(workComputer, clientIiko.getClientId());
 
         // setEditConnectDate(workComputersImpl, webResourceIikosImpl, clientIiko);
 
-       // return workComputersImpl;
+        // return workComputersImpl;
     }
 
-    public   void onEditCangedTebleWebResources(TableColumn.CellEditEvent cellEditEvent){
-        WebResourceIiko webResourceIiko=(WebResourceIiko) tableOfWebResources.getSelectionModel().getSelectedItem();
+    public void onEditCangedTebleWebResources(TableColumn.CellEditEvent cellEditEvent) {
+        WebResourceIiko webResourceIiko = (WebResourceIiko) tableOfWebResources.getSelectionModel().getSelectedItem();
         switch (cellEditEvent.getTableColumn().getId()) {
             case "columnNameWebResource":
                 webResourceIiko.setNameWebResource((String) cellEditEvent.getNewValue());
@@ -148,11 +150,11 @@ public class EditConnectFormController implements Initializable {
                 break;
         }
 
-        webResource_dao.insertNewConnectData(webResourceIiko,clientIiko.getClientId());
-        }
+        webResource_dao.insertNewConnectData(webResourceIiko, clientIiko.getClientId());
+    }
 
     public void actionDeleteWebResource(ActionEvent actionEvent) {
-        WebResourceIiko webResourceIiko=(WebResourceIiko) tableOfWebResources.getSelectionModel().getSelectedItem();
+        WebResourceIiko webResourceIiko = (WebResourceIiko) tableOfWebResources.getSelectionModel().getSelectedItem();
         webResource_dao.deleteWebResourceIiko(webResourceIiko);
         webResourceIikosImpl.remove(webResourceIiko);
 
@@ -161,34 +163,52 @@ public class EditConnectFormController implements Initializable {
     }
 
     public void actionAddWebResource(ActionEvent actionEvent) {
+        showWindowAddWebResource();
     }
 
     public void actionAddConnectData(ActionEvent actionEvent) {
         showWindowAddConnectData();
+        connectData_dao.insertNewConnectData()
     }
 
     public void actionDeleteConnectData(ActionEvent actionEvent) {
-        WorkComputer workComputer=(WorkComputer) tableOfWebResources.getSelectionModel().getSelectedItem();
+        WorkComputer workComputer = (WorkComputer) tableOfWebResources.getSelectionModel().getSelectedItem();
         connectData_dao.deleteConnectData(workComputer);
         workComputersImpl.remove(workComputer);
     }
 
-    private void showWindowAddConnectData(){
-        InitFXMLLoader initFXMLLoader=new InitFXMLLoader();
+    private void showWindowAddConnectData() {
+        InitFXMLLoader initFXMLLoader = new InitFXMLLoader();
         try {
-            fxmlLoader=initFXMLLoader.getFXMLLoader(nameFXMLAddConnectForm);
-            fxmlWindowAddConnectForm=fxmlLoader.load();
+            fxmlLoader = initFXMLLoader.getFXMLLoader(nameFXMLAddConnectForm);
+            fxmlWindowAddConnectForm = fxmlLoader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
         fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource(nameFXMLAddConnectForm));
         //fxmlLoader.setResources(ResourceBundle.getBundle(App.pathFXML));
-        windowAddConnectData =new Stage();
+        windowAddConnectData = new Stage();
 
-            windowAddConnectData.setScene(new Scene(fxmlWindowAddConnectForm));
-            windowAddConnectData.show();
+        windowAddConnectData.setScene(new Scene(fxmlWindowAddConnectForm));
+        windowAddConnectData.setResizable(false);
+        windowAddConnectData.showAndWait();
 
+    }
+
+    private void showWindowAddWebResource() {
+        InitFXMLLoader initFXMLLoader = new InitFXMLLoader();
+        try {
+            fxmlLoader = initFXMLLoader.getFXMLLoader(nameFXMLAddWebResource);
+            fxmlWindowAddWebResourceForm = fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        windowAddWebResourceForm = new Stage();
+        windowAddWebResourceForm.setScene(new Scene(fxmlWindowAddWebResourceForm));
+        windowAddWebResourceForm.setResizable(false);
+        //windowAddConnectData.initModality(Modality.APPLICATION_MODAL);
+        windowAddWebResourceForm.show();
 
     }
 }
