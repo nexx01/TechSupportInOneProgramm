@@ -1,23 +1,17 @@
 package org.iresto;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.layout.Pane;
-
-import javax.print.DocFlavor;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class InitFXMLLoaderWindow {
+public class InitFXMLLoader {
     private FXMLLoader fxmlLoader;
  public FXMLLoader getFXMLLoader(String nameFXML, String pathBundle) throws IOException {
      fxmlLoader = new FXMLLoader();
-     URL xmurl=getClass().getResource("/org/iresto/primary.fxml");
+     URL xmurl=getClass().getResource(nameFXML);
      fxmlLoader.setLocation(xmurl);
      fxmlLoader.setResources(ResourceBundle.getBundle(pathBundle));
      return fxmlLoader;
  }
-
-
 }
