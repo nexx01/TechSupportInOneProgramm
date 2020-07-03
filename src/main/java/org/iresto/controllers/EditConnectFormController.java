@@ -58,6 +58,9 @@ public class EditConnectFormController implements Initializable {
     private Parent fxmlWindowAddConnectForm;
     private String nameFXMLAddWebResource = "/org/iresto/AddWebResourceForm.fxml";
     private Parent fxmlWindowAddWebResourceForm;
+    private AddConnectController addConnectController;
+    private AddWebResourceFormControllers addWebResourceFormControllers;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -164,11 +167,20 @@ public class EditConnectFormController implements Initializable {
 
     public void actionAddWebResource(ActionEvent actionEvent) {
         showWindowAddWebResource();
+if(addWebResourceFormControllers.getWebResourceIiko()!=null) {
+    webResource_dao.insertNewConnectData(addWebResourceFormControllers.getWebResourceIiko(),
+            clientIiko.getClientId());
+    webResourceIikosImpl.add(addWebResourceFormControllers.getWebResourceIiko());
+}
     }
 
     public void actionAddConnectData(ActionEvent actionEvent) {
         showWindowAddConnectData();
-        connectData_dao.insertNewConnectData()
+        if(addConnectController.getWorkComputer()!=null) {
+            connectData_dao.insertNewConnectData(addConnectController.getWorkComputer(), clientIiko.getClientId());
+            workComputersImpl.add(addConnectController.getWorkComputer());
+            // connectData_dao.insertNewConnectData()
+        }
     }
 
     public void actionDeleteConnectData(ActionEvent actionEvent) {
@@ -185,11 +197,9 @@ public class EditConnectFormController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource(nameFXMLAddConnectForm));
+        addConnectController=fxmlLoader.getController();
         //fxmlLoader.setResources(ResourceBundle.getBundle(App.pathFXML));
         windowAddConnectData = new Stage();
-
         windowAddConnectData.setScene(new Scene(fxmlWindowAddConnectForm));
         windowAddConnectData.setResizable(false);
         windowAddConnectData.showAndWait();
@@ -204,11 +214,14 @@ public class EditConnectFormController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        addWebResourceFormControllers=fxmlLoader.getController();
+        //AddConnectController addConnectController=fxmlLoader.getController();
+
         windowAddWebResourceForm = new Stage();
         windowAddWebResourceForm.setScene(new Scene(fxmlWindowAddWebResourceForm));
         windowAddWebResourceForm.setResizable(false);
         //windowAddConnectData.initModality(Modality.APPLICATION_MODAL);
-        windowAddWebResourceForm.show();
+        windowAddWebResourceForm.showAndWait();
 
     }
 }

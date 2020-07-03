@@ -48,16 +48,14 @@ return null;
 
     /*Вставка новой строки в БД*/
     private boolean insertwebResourceIiko(WebResourceIiko webResourceIiko, int id_client) {
-        String INSERT_QUERY = "INSERT INTO webresources (id_client,typePC,loginAmmyAdmin,pswAmmyAdmin,loginAnyDesk,pswAnyDesk) VALUES (?,?,?,?,?,?);";
+        String INSERT_QUERY = "INSERT INTO webresources (id_client,nameWebResource,webAddress,login) VALUES (?,?,?,?);";
         try (Connection connection = ConnectorDB.getConnecton();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_QUERY)) {
             preparedStatement.setInt(1, id_client);
             preparedStatement.setString(2, webResourceIiko.getNameWebResource());
             preparedStatement.setString(3, webResourceIiko.getWebAddress());
-            preparedStatement.setString(4, webResourceIiko.getWebAddress());
-            preparedStatement.setString(5, webResourceIiko.getLoginWebResource());
-            preparedStatement.setString(6, webResourceIiko.getWebpassword());
-            preparedStatement.executeQuery();
+            preparedStatement.setString(4, webResourceIiko.getLoginWebResource());
+            preparedStatement.execute();
             return true;
         } catch (SQLException throwables) {
             throwables.printStackTrace();

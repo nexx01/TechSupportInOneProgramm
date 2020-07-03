@@ -10,14 +10,13 @@ public class WorkComputer extends AbstractWorkComputer {
         super(typePC);
     }
 
-    public WorkComputer(String typePC, String IDAmmyAdmin, String IDAnyDesk, String pswAmmyAdmin, String pswAnyDesk,
-                        int idInBaseOfData) {
-        super(typePC, IDAmmyAdmin, IDAnyDesk, pswAmmyAdmin, pswAnyDesk);
-        this.idInBaseOfData=idInBaseOfData;
+    public WorkComputer(String typePC, String IDAmmyAdmin, String pswAmmyAdmin, String IDAnyDesk, String pswAnyDesk, int idInBaseOfData) {
+        super(typePC, IDAmmyAdmin, pswAmmyAdmin, IDAnyDesk, pswAnyDesk);
+        this.idInBaseOfData = idInBaseOfData;
     }
 
-    public WorkComputer(String typePC, String IDAmmyAdmin, String IDAnyDesk, String pswAmmyAdmin, String pswAnyDesk) {
-        super(typePC, IDAmmyAdmin, IDAnyDesk, pswAmmyAdmin, pswAnyDesk);
+    public WorkComputer(String typePC, String IDAmmyAdmin, String pswAmmyAdmin, String IDAnyDesk, String pswAnyDesk) {
+        super(typePC, IDAmmyAdmin, pswAmmyAdmin, IDAnyDesk, pswAnyDesk);
     }
 
     @Override

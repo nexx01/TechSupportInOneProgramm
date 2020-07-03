@@ -28,8 +28,8 @@ public class ConnectData_DAO {
                 workComputers.add(new WorkComputer(
                         resultSet.getString(3),
                         resultSet.getString(4),
-                        resultSet.getString(6),
                         resultSet.getString(5),
+                        resultSet.getString(6),
                         resultSet.getString(7),
                         resultSet.getInt(1)   // номер строки в БД, для редактирования данных
                 ));
@@ -64,7 +64,7 @@ public class ConnectData_DAO {
             preparedStatement.setString(4, workComputer.getPswAmmyAdmin());
             preparedStatement.setString(5, workComputer.getIDAnyDesk());
             preparedStatement.setString(6, workComputer.getPswAnyDesk());
-            preparedStatement.executeQuery();
+            preparedStatement.execute();
             return true;
         } catch (SQLException throwables) {
             throwables.printStackTrace();

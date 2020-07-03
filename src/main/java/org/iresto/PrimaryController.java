@@ -20,6 +20,8 @@ import javafx.stage.Stage;
 import org.controlsfx.control.textfield.CustomTextField;
 import org.controlsfx.control.textfield.TextFields;
 import org.iresto.WorkWithBD.DAO.Client_DAO;
+import org.iresto.WorkWithBD.DAO.ConnectData_DAO;
+import org.iresto.WorkWithBD.DAO.WebResource_DAO;
 import org.iresto.controllers.AddClientFormController;
 import org.iresto.object.AbstractClientIIKO;
 import org.iresto.object.impl.clientIiko.ClientIiko;
@@ -161,9 +163,25 @@ public class PrimaryController implements Initializable {
                 windowOfConnectData=null;
                 break;
             case "btnDelete":
+                if(checkoutBeforeDeleteClient(selectedClientIiko.getClientId())) {
+                    client_dao.deleteClient(selectedClientIiko);
+                    clientBookImpl.remove(selectedClientIiko);
+                }
                 break;
 
         }
+    }
+
+    private boolean checkoutBeforeDeleteClient(int id_client){
+        WebResource_DAO webResource_dao=new WebResource_DAO();
+        ConnectData_DAO connectData_dao=new ConnectData_DAO();
+        if(webResource_dao.findEntityByClientId(id_client).size()!=0|
+        connectData_dao.findConnectDataByClientId(id_client).size()!=0){
+            DialogManager.showInfoDialog(ResourceBundle.getBundle(App.pathBundle).getString("Error"),
+                    ResourceBundle.getBundle(App.pathBundle).getString("ForbiddenToDelete"));
+            return false;
+        }
+        return true;
     }
 
 

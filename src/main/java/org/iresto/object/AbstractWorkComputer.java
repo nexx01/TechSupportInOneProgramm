@@ -27,13 +27,16 @@ public abstract class AbstractWorkComputer {
      * например http:\\demo-stend-1.iiko.it:8080
      **/
 
-    public AbstractWorkComputer(String typePC, String IDAmmyAdmin, String IDAnyDesk, String pswAmmyAdmin, String pswAnyDesk) {
+    public AbstractWorkComputer(String typePC, String IDAmmyAdmin,  String pswAmmyAdmin,String IDAnyDesk, String pswAnyDesk) {
         this.typePC = new SimpleStringProperty(typePC);
         this.IDAmmyAdmin = new SimpleStringProperty(IDAmmyAdmin);
         this.IDAnyDesk = new SimpleStringProperty(IDAnyDesk);
         PswAmmyAdmin = new SimpleStringProperty(pswAmmyAdmin);
         PswAnyDesk = new SimpleStringProperty(pswAnyDesk);
     }
+
+
+
 
     public AbstractWorkComputer(String typePC) {
         this.typePC.set(typePC);

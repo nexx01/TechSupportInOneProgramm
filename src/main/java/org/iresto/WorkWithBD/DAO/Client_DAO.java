@@ -74,5 +74,17 @@ public class Client_DAO {
         return false;
     }
 
+    public boolean deleteClient(AbstractClient client){
+        String DELETE_QUERY="DELETE FROM clientiiko WHERE id=?;";
+        try(Connection connection=ConnectorDB.getConnecton();
+        PreparedStatement preparedStatement=connection.prepareStatement(DELETE_QUERY)) {
+            preparedStatement.setInt(1,client.getClientId());
+            preparedStatement.execute();
+            return true;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+      return  false;
+    }
 
 }

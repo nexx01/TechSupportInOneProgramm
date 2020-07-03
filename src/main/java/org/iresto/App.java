@@ -15,7 +15,7 @@ public class App extends Application {
 
     private  Scene scene;
     private  FXMLLoader  fxmlPrimary;
-    //public static String pathBundle="org.iresto.bundle";
+    public static String pathBundle="org.iresto.bundle";
     private String nameFXML= "/org/iresto/primary.fxml";
 
     @Override
