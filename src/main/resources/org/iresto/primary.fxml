@@ -10,14 +10,13 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iresto.PrimaryController">
     <children>
-        <AnchorPane prefHeight="65.0" prefWidth="590.0">
+        <AnchorPane prefHeight="24.0" prefWidth="590.0">
             <VBox.margin>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </VBox.margin>
             <children>
-                <CustomTextField fx:id="txtSearch" layoutX="14.0" layoutY="11.0" opacity="0.18" prefHeight="25.0" prefWidth="453.0" text="%txtSearch" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="11.0" />
+                <CustomTextField fx:id="txtSearch" layoutX="14.0" layoutY="11.0" opacity="0.18" prefHeight="25.0" prefWidth="453.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="11.0" />
                 <Button fx:id="btnSearch" cancelButton="true" defaultButton="true" layoutX="474.0" layoutY="11.0" mnemonicParsing="false" onAction="#actionSearch" prefHeight="25.0" prefWidth="105.0" text="%btnSearch" AnchorPane.rightAnchor="11.0" />
-            <Button fx:id="btnConnectedData" layoutX="29.0" layoutY="39.0" mnemonicParsing="false" onAction="#actionButtonPressed" prefHeight="25.0" prefWidth="105.0" text="%buttonConnectedData" />
             </children>
         </AnchorPane>
         <AnchorPane prefHeight="303.0" prefWidth="590.0" VBox.vgrow="ALWAYS">
@@ -25,13 +24,13 @@
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </VBox.margin>
             <children>
-                <TableView fx:id="tableClientBook" layoutY="-12.0" prefHeight="299.0" prefWidth="590.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-12.0">
+                <TableView fx:id="tableClientBook" layoutY="-12.0" onMouseClicked="#actionDoubleClickInTable" prefHeight="273.0" prefWidth="590.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="43.0">
                     <columns>
                         <TableColumn fx:id="clnBrand" prefWidth="119.0" text="%columnBrand" />
                         <TableColumn fx:id="clnLegalName" prefWidth="184.0" text="%columnLegalyName" />
                         <TableColumn fx:id="clnAddress" prefWidth="130.0" text="%columnAddress" />
                         <TableColumn fx:id="clnLicense" prefWidth="84.0" text="%columnLicense" />
-                        <TableColumn fx:id="clnStatusOfSupport" prefWidth="64.0" text="%columnStatusOfSupport" />
+                        <TableColumn fx:id="clnStatusOfSupport" onEditCommit="#actionDoubleClickInTable" prefWidth="64.0" text="%columnStatusOfSupport" />
                     </columns>
                     <padding>
                         <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
@@ -40,9 +39,12 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                     </columnResizePolicy>
                 </TableView>
-            <Button fx:id="btnEdit" layoutX="2.0" layoutY="287.0" mnemonicParsing="false" onAction="#actionButtonPressed" prefHeight="25.0" prefWidth="98.0" text="%Edit" />
-            <Button fx:id="btnAdd" layoutX="110.0" layoutY="287.0" mnemonicParsing="false" onAction="#actionButtonPressed" prefHeight="25.0" prefWidth="98.0" text="%Add" />
-            <Button fx:id="btnDelete" layoutX="224.0" layoutY="287.0" mnemonicParsing="false" onAction="#actionButtonPressed" prefHeight="25.0" prefWidth="105.0" text="%Delete" />
+            <Button fx:id="btnEdit" layoutX="2.0" layoutY="287.0" mnemonicParsing="false" onAction="#actionButtonPressed" prefHeight="25.0" prefWidth="98.0" text="%Edit" AnchorPane.bottomAnchor="3.0" />
+            <Button fx:id="btnAdd" layoutX="110.0" layoutY="287.0" mnemonicParsing="false" onAction="#actionButtonPressed" prefHeight="25.0" prefWidth="98.0" text="%Add" AnchorPane.bottomAnchor="3.0" />
+            <Button fx:id="btnDelete" layoutX="224.0" layoutY="287.0" mnemonicParsing="false" onAction="#actionButtonPressed" prefHeight="25.0" prefWidth="105.0" text="%Delete" AnchorPane.bottomAnchor="3.0" />
+            <Button fx:id="btnConnectedData" layoutX="14.0" layoutY="3.0" mnemonicParsing="false" onAction="#actionButtonPressed" prefHeight="25.0" prefWidth="105.0" text="%buttonConnectedData" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="3.0" />
+            <Button fx:id="btnShowAllClient" layoutX="127.0" layoutY="3.0" mnemonicParsing="false" onAction="#actionButtonPressed" prefHeight="25.0" prefWidth="128.0" text="Show All Client" AnchorPane.leftAnchor="127.0" AnchorPane.topAnchor="3.0" />
+            <Button fx:id="btnCloseProgram" layoutX="457.0" layoutY="316.0" mnemonicParsing="false" onAction="#actionButtonPressed" prefHeight="25.0" prefWidth="121.0" text="%CloseProgram" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="12.0" />
             </children>
         </AnchorPane>
     </children>
