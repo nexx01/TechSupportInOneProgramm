@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -44,6 +45,7 @@ public class EditConnectFormController implements Initializable {
     public Button btnAddWebResource;
     public Button btnDeleteConnectData;
     public Button btnAddConnectData;
+    public Button btnExitFromEdit;
     private ClientIiko clientIiko;
     private ObservableList<WorkComputer> workComputersImpl;
     private ObservableList<WebResourceIiko> webResourceIikosImpl;
@@ -79,6 +81,7 @@ public class EditConnectFormController implements Initializable {
 
         columnTypePC.setCellValueFactory(new PropertyValueFactory<>("typePC"));
         columnAmmyAdmin.setCellValueFactory(new PropertyValueFactory<>("IDAmmyAdmin"));
+        //columnPswAmmy.setCellValueFactory(new PropertyValueFactory<>("pswAmmyAdmin"));
         columnPswAmmy.setCellValueFactory(new PropertyValueFactory<>("pswAmmyAdmin"));
         columnAnydesk.setCellValueFactory(new PropertyValueFactory<>("IDAnyDesk"));
         columnPswAnydesk.setCellValueFactory(new PropertyValueFactory<>("pswAnyDesk"));
@@ -151,9 +154,16 @@ public class EditConnectFormController implements Initializable {
             case "columnLoginWebResource":
                 webResourceIiko.setLoginWebResource((String) cellEditEvent.getNewValue());
                 break;
+
         }
 
         webResource_dao.insertNewConnectData(webResourceIiko, clientIiko.getClientId());
+    }
+
+    public void actionCloseWindow(ActionEvent actionEvent) {
+        Node source = (Node) actionEvent.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.hide();
     }
 
     public void actionDeleteWebResource(ActionEvent actionEvent) {
@@ -202,6 +212,7 @@ if(addWebResourceFormControllers.getWebResourceIiko()!=null) {
         windowAddConnectData = new Stage();
         windowAddConnectData.setScene(new Scene(fxmlWindowAddConnectForm));
         windowAddConnectData.setResizable(false);
+       // windowAddConnectData.initModality(Modality.APPLICATION_MODAL);
         windowAddConnectData.showAndWait();
 
     }
@@ -220,7 +231,7 @@ if(addWebResourceFormControllers.getWebResourceIiko()!=null) {
         windowAddWebResourceForm = new Stage();
         windowAddWebResourceForm.setScene(new Scene(fxmlWindowAddWebResourceForm));
         windowAddWebResourceForm.setResizable(false);
-        //windowAddConnectData.initModality(Modality.APPLICATION_MODAL);
+        windowAddWebResourceForm.initModality(Modality.APPLICATION_MODAL);
         windowAddWebResourceForm.showAndWait();
 
     }

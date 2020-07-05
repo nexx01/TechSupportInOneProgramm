@@ -13,9 +13,11 @@ import java.io.IOException;
  */
 public class App extends Application {
 
-    private  Scene scene;
-    private  FXMLLoader  fxmlPrimary;
+    private Scene scene;
+    private   FXMLLoader  fxmlPrimary;
+    private PrimaryController primaryController;
     public static String pathBundle="org.iresto.bundle";
+    public static double version = 1.1;
     private String nameFXML= "/org/iresto/primary.fxml";
 
     @Override
@@ -23,6 +25,8 @@ public class App extends Application {
         InitFXMLLoader initFXMLLoaderWindow =new InitFXMLLoader();
         fxmlPrimary =initFXMLLoaderWindow.getFXMLLoader(nameFXML/*, pathBundle*/);
         scene = new Scene(fxmlPrimary.load());
+        primaryController=fxmlPrimary.getController();
+        primaryController.showClient();
         primarystage.setScene(scene);
         primarystage.show();
     }

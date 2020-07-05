@@ -26,18 +26,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="784a1f47-9b84-4093-9d0b-6984d5f06049" name="Default Changelist" comment="добавлена форма для редактированя вебресурсов">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/iresto/utils/updateDB/updateDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/Client_DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/ConnectData_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/ConnectData_DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/WebResource_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/WorkWithBD/DAO/WebResource_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddClientFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddClientFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddConnectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddConnectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddWebResourceFormControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddWebResourceFormControllers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/EditConnectFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/controllers/EditConnectFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/object/AbstractWorkComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/object/AbstractWorkComputer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/iresto/object/impl/WorkComputer/WorkComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iresto/object/impl/WorkComputer/WorkComputer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/AddConnectForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/AddConnectForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/AddOrEditClient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/AddOrEditClient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/AddWebResourceForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/AddWebResourceForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/EditConnectDataForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/EditConnectDataForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/bundle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/bundle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/primary.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/iresto/secondary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/iresto/secondary.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +59,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="FormAddConnectData" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -115,7 +118,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4f990358-d0f9-4b4e-a265-007cabb77481" name="Default Changelist" comment="пофикшены некоторые ошибки" />
+      <changelist id="784a1f47-9b84-4093-9d0b-6984d5f06049" name="Default Changelist" comment="добавлена форма для редактированя вебресурсов" />
       <created>1591879926702</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -211,10 +214,11 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1592601684750" />
-    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser" timestamp="1593743478647">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1593864906604">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1593743478647" />
+    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1593864906604" />
     <state x="466" y="263" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1592761131136">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -231,38 +235,46 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="559" y="267" key="Github.ShareDialog/0.0.1366.738@0.0.1366.738" timestamp="1592393878519" />
-    <state width="1323" height="84" key="GridCell.Tab.0.bottom" timestamp="1593748393406">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="67" key="GridCell.Tab.0.bottom" timestamp="1593882447666">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="84" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593748393406" />
-    <state width="1323" height="84" key="GridCell.Tab.0.center" timestamp="1593748393406">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="10" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593772882277" />
+    <state width="1323" height="67" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1593882447666" />
+    <state width="1323" height="67" key="GridCell.Tab.0.center" timestamp="1593882447665">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="84" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593748393406" />
-    <state width="1323" height="84" key="GridCell.Tab.0.left" timestamp="1593748393405">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="10" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593772882273" />
+    <state width="1323" height="67" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1593882447665" />
+    <state width="1323" height="67" key="GridCell.Tab.0.left" timestamp="1593882447665">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="84" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593748393405" />
-    <state width="1323" height="84" key="GridCell.Tab.0.right" timestamp="1593748393406">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="10" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593772882273" />
+    <state width="1323" height="67" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1593882447665" />
+    <state width="1323" height="67" key="GridCell.Tab.0.right" timestamp="1593882447665">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="84" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593748393406" />
-    <state width="1323" height="230" key="GridCell.Tab.1.bottom" timestamp="1593747292338">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="10" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593772882273" />
+    <state width="1323" height="67" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1593882447665" />
+    <state width="1323" height="242" key="GridCell.Tab.1.bottom" timestamp="1593867896315">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="230" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593747292338" />
-    <state width="1323" height="230" key="GridCell.Tab.1.center" timestamp="1593747292337">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="230" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593754543106" />
+    <state width="1323" height="242" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1593867896315" />
+    <state width="1323" height="242" key="GridCell.Tab.1.center" timestamp="1593867896314">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="230" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1593747292337" />
-    <state width="1323" height="230" key="GridCell.Tab.1.left" timestamp="1593747292337">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="230" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1593754543105" />
+    <state width="1323" height="242" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1593867896314" />
+    <state width="1323" height="242" key="GridCell.Tab.1.left" timestamp="1593867896314">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="230" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1593747292337" />
-    <state width="1323" height="230" key="GridCell.Tab.1.right" timestamp="1593747292337">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="230" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1593754543105" />
+    <state width="1323" height="242" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1593867896314" />
+    <state width="1323" height="242" key="GridCell.Tab.1.right" timestamp="1593867896314">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="230" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1593747292337" />
+    <state width="1323" height="230" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1593754543106" />
+    <state width="1323" height="242" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1593867896314" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1591940795975">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -283,6 +295,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="131" y="51" key="new project wizard/0.0.1366.738@0.0.1366.738" timestamp="1592733193546" />
+    <state x="389" y="141" key="refactoring.ChangeSignatureDialog" timestamp="1593868419456">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="389" y="141" key="refactoring.ChangeSignatureDialog/0.0.1366.768@0.0.1366.768" timestamp="1593868419456" />
     <state x="339" y="165" key="run.anything.popup" timestamp="1593718704549">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -311,27 +327,27 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java</url>
-          <line>85</line>
+          <line>87</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java</url>
-          <line>76</line>
+          <line>83</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java</url>
-          <line>186</line>
+          <line>226</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java</url>
-          <line>221</line>
+          <line>261</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/SecondaryController.java</url>
-          <line>150</line>
+          <line>152</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -366,12 +382,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddClientFormController.java</url>
-          <line>60</line>
+          <line>61</line>
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/AddClientFormController.java</url>
-          <line>61</line>
+          <line>62</line>
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -386,27 +402,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/EditConnectFormController.java</url>
-          <line>195</line>
-          <option name="timeStamp" value="148" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/EditConnectFormController.java</url>
-          <line>194</line>
-          <option name="timeStamp" value="149" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/EditConnectFormController.java</url>
-          <line>201</line>
-          <option name="timeStamp" value="152" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/EditConnectFormController.java</url>
-          <line>170</line>
+          <line>180</line>
           <option name="timeStamp" value="153" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/EditConnectFormController.java</url>
-          <line>172</line>
+          <line>182</line>
           <option name="timeStamp" value="154" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -416,8 +417,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/EditConnectFormController.java</url>
-          <line>159</line>
+          <line>169</line>
           <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/EditConnectFormController.java</url>
+          <line>233</line>
+          <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/controllers/EditConnectFormController.java</url>
+          <line>234</line>
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iresto/PrimaryController.java</url>
+          <line>178</line>
+          <option name="timeStamp" value="159" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -14,6 +14,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -53,6 +54,7 @@ public class SecondaryController implements Initializable {
     public TableColumn<WebResourceIiko, String> columnLoginWebResource;
     public Button btnGoToWebSite;
     public Button btnEdit;
+    public Button btnExitinMainWindow;
 
     private ClientIiko clientIiko;
    private ObservableList<WorkComputer> workComputersImpl=FXCollections.observableArrayList();
@@ -168,7 +170,9 @@ public void actionGoToWebLink() throws URISyntaxException {
                // addConnectFormController.setEditConnectDate(workComputersImpl,webResourceIikosImpl);
                 showWindowEditConnectData();
                 break;
-
+            case "btnExitinMainWindow":
+                closeWindow(actionEvent);
+                break;
         }
         tableOfConnectData.getItems().clear();
         showConnectedDataClientIiko(clientIiko,mainstage);
@@ -183,20 +187,13 @@ private boolean workComputerIsSelected(WorkComputer selectedWorkComputer){
         return  true;
 }
 
-/*    private Parent initFXMLLoaderWindow(String nameFXML, String pathFXML ) {
-        try {
-            fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource(nameFXML));
-            fxmlLoader.setResources(ResourceBundle.getBundle(pathFXML));
-            return fxmlLoader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }*/
+    public void closeWindow(ActionEvent actionEvent) {
+        Node source = (Node) actionEvent.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.hide();
+    }
 
 private void showWindowEditConnectData(){
-    //fxmlWindowEditConnectData=initFXMLLoaderWindow(nameWindowEditConnectData,App.pathFXML);
     InitFXMLLoader initFXMLLoader=new InitFXMLLoader();
     try {
         fxmlLoader = initFXMLLoader.getFXMLLoader(nameWindowEditConnectData);
@@ -212,8 +209,8 @@ private void showWindowEditConnectData(){
         windowEditConnectData.setTitle(resourceBundle.getString("Edit"));
         windowEditConnectData.setMinHeight(200);
         windowEditConnectData.setMinWidth(200);
-        windowEditConnectData.initModality(Modality.WINDOW_MODAL);
-        windowEditConnectData.initOwner(mainstage);
+        windowEditConnectData.initModality(Modality.APPLICATION_MODAL);
+        //windowEditConnectData.initOwner(mainstage);
         windowEditConnectData.show();
     }
 }
