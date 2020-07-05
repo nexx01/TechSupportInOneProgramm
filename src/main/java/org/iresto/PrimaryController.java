@@ -9,12 +9,17 @@ import javafx.beans.property.ObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.controlsfx.control.textfield.CustomTextField;
@@ -51,6 +56,8 @@ public class PrimaryController implements Initializable {
     public Button btnEdit;
     public Button btnAdd;
     public Button btnDelete;
+    public Button btnCloseProgram;
+    public Button btnShowAllClient;
     private ObservableList<ClientIiko> clientBookImpl = FXCollections.observableArrayList();
 
     public ResourceBundle resourceBundle;
@@ -75,14 +82,20 @@ public class PrimaryController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.resourceBundle = resourceBundle;
+        setupClearButtonField(txtSearch);
+        tableClientBook.setEditable(true);
+    }
+
+    public void showClient(){
         clnBrand.setCellValueFactory(new PropertyValueFactory<ClientIiko, String>("brand"));
         clnLegalName.setCellValueFactory(new PropertyValueFactory<ClientIiko, String>("legalEntity"));
         clnAddress.setCellValueFactory(new PropertyValueFactory<ClientIiko, String>("address"));
         clnLicense.setCellValueFactory(new PropertyValueFactory<ClientIiko, String>("kindOfLicense"));
         clnStatusOfSupport.setCellValueFactory(new PropertyValueFactory<ClientIiko, String>("statusOfSupport"));
-        setupClearButtonField(txtSearch);
+
         fillData();
-    }
+      }
+
 
     public void setMainStage(Stage mainStage){
         this.mainStage=mainStage;
@@ -143,6 +156,9 @@ public class PrimaryController implements Initializable {
              * 2) Вызывается метод setClientIiko(...), слушает какой клиент(строчка) в таблице
              * 3) showWindowConnectData(selectedClientIiko) формирует сцену с подключениями */
             case "btnConnectedData":
+                if(!clientIsSelected(selectedClientIiko)){
+                    return;
+                }
                 //initFXMLLoaderWindow(nameFXMLWindowOfConnectData,pathFXMLWindowOfConnectData);
                 showWindowConnectData(selectedClientIiko);
                 break;
@@ -160,15 +176,39 @@ public class PrimaryController implements Initializable {
                 break;
             case "btnAdd":
                 showWindowAddOrEditClient(resourceBundle.getString("Add"), mainStage);
+                clientBookImpl.add(addClientFormController.getClient());
                 windowOfConnectData=null;
                 break;
             case "btnDelete":
+                if(!clientIsSelected(selectedClientIiko)){
+                    return;
+                }
                 if(checkoutBeforeDeleteClient(selectedClientIiko.getClientId())) {
                     client_dao.deleteClient(selectedClientIiko);
                     clientBookImpl.remove(selectedClientIiko);
                 }
                 break;
+            case "btnCloseProgram":
+                System.exit(0);
+            break;
+            case "btnShowAllClient":
+                showClient();
+            break;
+        }
+    }
 
+
+    @FXML
+    private void actionDoubleClickInTable(MouseEvent mouseButton){
+    if(mouseButton.getClickCount()==2){
+            ClientIiko selectedClientIiko = (ClientIiko) tableClientBook.getSelectionModel().getSelectedItem();
+
+            if (!clientIsSelected(selectedClientIiko)) {
+                return;
+            }
+            //initFXMLLoaderWindow(nameFXMLWindowOfConnectData,pathFXMLWindowOfConnectData);
+
+            showWindowConnectData(selectedClientIiko);
         }
     }
 
@@ -222,11 +262,12 @@ public class PrimaryController implements Initializable {
                 windowOfConnectData.setTitle(titleOfWindow);
                 windowOfConnectData.setMinHeight(200);
                 windowOfConnectData.setMinWidth(300);
-                windowOfConnectData.initModality(Modality.WINDOW_MODAL);
+               // windowOfConnectData.initModality(Modality.WINDOW_MODAL);
+                windowOfConnectData.initModality(Modality.APPLICATION_MODAL);
                 // windowOfConnectData.initOwner();
 
             }
-            windowOfConnectData.show();
+            windowOfConnectData.showAndWait();
         }
 
 
@@ -247,9 +288,9 @@ public class PrimaryController implements Initializable {
             windowAddOrEditClient.setTitle(titleOfWindow);
             windowAddOrEditClient.setMinWidth(150);
             windowAddOrEditClient.setMinHeight(200);
-            windowAddOrEditClient.initModality(Modality.WINDOW_MODAL);
-            windowAddOrEditClient.initOwner(mainStage);
-            windowAddOrEditClient.show();
+            windowAddOrEditClient.initModality(Modality.APPLICATION_MODAL);
+            //windowAddOrEditClient.initOwner(mainStage);
+            windowAddOrEditClient.showAndWait();
         }
         }
 
