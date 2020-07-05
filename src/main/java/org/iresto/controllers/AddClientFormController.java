@@ -24,6 +24,7 @@ public class AddClientFormController implements Initializable{
     public TextField txtfieldAddLicense;
     public TextField txtfieldAddStatusOfSupport;
     public Button btnSave;
+    public Button btnCancel;
     private ResourceBundle resourceBundle;
     private Client_DAO client_dao;
     private ClientIiko client;
@@ -102,10 +103,7 @@ public class AddClientFormController implements Initializable{
     }
 
 
-
-
-
-
-
-
+    public ClientIiko getClient() {
+        return client;
+    }
 }

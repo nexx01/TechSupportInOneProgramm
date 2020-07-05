@@ -26,6 +26,7 @@ public class AddConnectController implements Initializable {
     public Label lblIdAnyDesk;
     public Label lblPswAnyDesk;
     public Button btnOK;
+    public Button btnCancel;
     private ResourceBundle resourceBundle;
     private WorkComputer workComputer;
 
