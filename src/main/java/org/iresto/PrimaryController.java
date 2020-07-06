@@ -71,6 +71,7 @@ public class PrimaryController implements Initializable {
     private Stage mainStage;
     private Stage windowOfConnectData;
     private Stage windowAddOrEditClient;
+    private ClientIiko selectedClientIiko;
 
     String nameFXMLWindowOfConnectData="/org/iresto/secondary.fxml";
 
@@ -140,12 +141,12 @@ public class PrimaryController implements Initializable {
 /*метод определяет на какую кнопку нажали и проводит соответсвующие действия*/
     public void actionButtonPressed(ActionEvent actionEvent) {
         Object source = actionEvent.getSource();
-
+        selectedClientIiko = (ClientIiko) tableClientBook.getSelectionModel().getSelectedItem();
         if (!(source instanceof Button)) {
             return;
         }
 
-        ClientIiko selectedClientIiko = (ClientIiko) tableClientBook.getSelectionModel().getSelectedItem();
+
 
         Button clickedButton = (Button) source;
 
@@ -161,6 +162,7 @@ public class PrimaryController implements Initializable {
                 }
                 //initFXMLLoaderWindow(nameFXMLWindowOfConnectData,pathFXMLWindowOfConnectData);
                 showWindowConnectData(selectedClientIiko);
+                windowOfConnectData=null;
                 break;
             case "btnEdit":
                 if(!clientIsSelected(selectedClientIiko)){
@@ -198,11 +200,15 @@ public class PrimaryController implements Initializable {
     }
 
 
+
+
+
     @FXML
     private void actionDoubleClickInTable(MouseEvent mouseButton){
-    if(mouseButton.getClickCount()==2){
-            ClientIiko selectedClientIiko = (ClientIiko) tableClientBook.getSelectionModel().getSelectedItem();
 
+    if(mouseButton.getClickCount()==2){
+        windowOfConnectData=null;
+        selectedClientIiko = (ClientIiko) tableClientBook.getSelectionModel().getSelectedItem();
             if (!clientIsSelected(selectedClientIiko)) {
                 return;
             }
@@ -225,20 +231,6 @@ public class PrimaryController implements Initializable {
     }
 
 
-/*    *//*Инициализатор fxml Универсальный*//*
-    private Parent initFXMLLoaderWindow(String nameFXML, String pathFXML ) {
-        try {
-            fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource(nameFXML));
-            fxmlLoader.setResources(ResourceBundle.getBundle(pathFXML));
-            return fxmlLoader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }*/
-
-
     /*По нажатию кнопки Подключения вызывается инициализация хагрузки secondary.fxml  и открывается
      * окно с подключениям*/
     public void showWindowConnectData(ClientIiko selectedClientIiko) {
@@ -250,7 +242,7 @@ public class PrimaryController implements Initializable {
                 e.printStackTrace();
             }
             secondaryController = fxmlLoader.getController();
-            secondaryController.showConnectedDataClientIiko((ClientIiko) tableClientBook.getSelectionModel().getSelectedItem(), windowOfConnectData);
+            secondaryController.showConnectedDataClientIiko(selectedClientIiko, windowOfConnectData);
             //  ссылку на окно передаем, чтобы сделать мэйнстэйдж и следующее окно будет модальным
 
             if (windowOfConnectData == null) { // условие чтобы открывалось одно второе окно
